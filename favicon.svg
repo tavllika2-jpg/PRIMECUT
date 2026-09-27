@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- клип, разрезанный курсором -->
+  <rect x="2" y="7" width="13" height="18" rx="3" fill="#5B4BD0"/>
+  <rect x="17" y="7" width="13" height="18" rx="3" fill="#5B4BD0"/>
+  <rect x="15.25" y="2" width="1.5" height="28" fill="#D63B41"/>
+</svg>
