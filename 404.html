@@ -7,26 +7,24 @@
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@900&family=Rubik:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <!-- Стили встроены сюда, чтобы страница выглядела правильно по любому адресу -->
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #0C0C0C; color: #D7E2EA;
-           font-family: "Rubik", system-ui, sans-serif; text-align: center; }
-    h1 { font-family: "Kanit", "Rubik", sans-serif; font-weight: 900; font-size: clamp(7rem, 32vw, 20rem); line-height: 1;
-         background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%); -webkit-background-clip: text; background-clip: text;
-         -webkit-text-fill-color: transparent; color: transparent; }
-    p { margin: 16px auto 36px; max-width: 28ch; font-weight: 300; font-size: 1.25rem; }
-    a { display: inline-block; padding: 16px 48px; border-radius: 999px; color: #fff; text-decoration: none; text-transform: uppercase;
-        letter-spacing: .1em; font-weight: 500; outline: 2px solid #fff; outline-offset: -3px;
-        background: linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%);
-        box-shadow: 0 4px 4px rgba(181, 1, 167, .25), inset 4px 4px 12px #7721B1; }
+    body { min-height: 100vh; display: grid; place-items: center; padding: 24px; text-align: center;
+           background: radial-gradient(circle at 30% 30%, #EFE7FF, #FFFFFF 60%); color: #000;
+           font-family: "Inter", system-ui, sans-serif; }
+    h1 { color: #5E0ED7; font-weight: 600; font-size: clamp(7rem, 32vw, 18rem); line-height: 1; letter-spacing: -0.05em; }
+    p { margin: 16px auto 36px; max-width: 28ch; font-size: 1.2rem; }
+    a { display: inline-block; padding: 16px 36px; border-radius: 999px; background: #000; color: #fff; text-decoration: none;
+        font-weight: 600; font-size: .875rem; text-transform: uppercase; letter-spacing: .1em; }
+    a:hover { background: #5E0ED7; }
   </style>
 </head>
 <body>
   <main>
     <h1>404</h1>
-    <p>Такой страницы нет. Возможно, ссылка устарела.</p>
+    <p>Кадр не найден. Возможно, ссылка устарела.</p>
     <a href="/" id="home">На главную</a>
     <script>
       if (location.hostname.endsWith("github.io")) {

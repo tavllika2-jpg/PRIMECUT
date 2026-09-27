@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PRIMECUT — агентство продвижения: видеосъёмка, монтаж, SMM</title>
-  <meta name="description" content="PRIMECUT подбирает видеографов, монтажёров и SMM-специалистов под задачу и бюджет. Съёмка рилс и рекламы, монтаж, ведение соцсетей и таргет.">
-  <meta name="theme-color" content="#0C0C0C">
+  <meta name="description" content="PRIMECUT подбирает видеографов, монтажёров и SMM-специалистов под задачу и бюджет и ведёт проект от первого кадра до публикации.">
+  <meta name="theme-color" content="#FFFFFF">
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRIMECUT — агентство продвижения">
   <meta property="og:description" content="Видеографы, монтажёры и SMM-специалисты для вашего бизнеса.">
@@ -14,7 +14,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="config.js" defer></script>
   <script src="main.js" defer></script>
@@ -22,287 +22,271 @@
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
 
-  <main id="main" class="page">
+  <!-- Фотоаппарат, который летит через весь сайт. Собирается скриптом main.js -->
+  <div class="cam-layer" aria-hidden="true">
+    <div class="cam-mover">
+      <div class="cam-shadow"></div>
+      <div class="cam-scene"><div class="cam" id="cam"></div></div>
+    </div>
+    <div class="cam-flash"></div>
+  </div>
+
+  <!-- Кнопка меню всегда в правом верхнем углу -->
+  <button class="burger fade-down" type="button" aria-expanded="false" aria-controls="menu" aria-label="Открыть меню" style="--i: 5">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Меню" hidden>
+    <div class="menu__top">
+      <a class="logo" href="#top" data-menu-link><span class="logo__ring"><span class="logo__dot"></span></span><span class="logo__word">PRIMECUT</span></a>
+      <button class="menu__close" type="button" aria-label="Закрыть меню">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <ul class="menu__links">
+      <li><a href="#path" data-menu-link>Путь проекта</a></li>
+      <li><a href="#services" data-menu-link>Услуги</a></li>
+      <li><a href="#specialists" data-menu-link>Специалисты</a></li>
+      <li><a href="#projects" data-menu-link>Проекты</a></li>
+      <li><a href="#contacts" data-menu-link>Контакты</a></li>
+    </ul>
+    <a class="cta-link menu__cta" href="#contacts" data-menu-link>Оставить заявку
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <main id="main">
 
     <!-- ================= ПЕРВЫЙ ЭКРАН =================
-         Главная картинка: загрузите в репозиторий файл hero.png — он встанет вместо объектива. -->
+         Фон: если загрузить в репозиторий видео hero.mp4, оно будет играть на фоне. -->
     <section class="hero" id="top">
-      <nav class="hero__nav" aria-label="Разделы сайта" data-fade data-y="-20" data-delay="0">
-        <a href="#services">Услуги</a>
-        <a href="#projects">Проекты</a>
-        <a href="#specialists">Специалисты</a>
-        <a href="#contacts">Контакты</a>
+      <i class="cam-anchor" data-cam="0.28,0.47,1.3" data-cam-m="0.5,0.3,0.66" style="top: 50vh"></i>
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--a"></span><span class="blob blob--b"></span><span class="blob blob--c"></span>
+      </div>
+      <video class="hero__video" src="hero.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"
+             onloadeddata="this.classList.add('is-ready')" onerror="this.remove()"></video>
+
+      <nav class="topnav" aria-label="Разделы сайта">
+        <a class="logo fade-down" href="#top" style="--i: 0" aria-label="PRIMECUT, наверх">
+          <span class="logo__ring"><span class="logo__dot"></span></span><span class="logo__word">PRIMECUT</span>
+        </a>
+        <ul class="topnav__links">
+          <li class="fade-down" style="--i: 1"><a href="#path">Путь</a></li>
+          <li class="fade-down" style="--i: 2"><a href="#services">Услуги</a></li>
+          <li class="fade-down" style="--i: 3"><a href="#specialists">Специалисты</a></li>
+          <li class="fade-down" style="--i: 4"><a href="#projects">Проекты</a></li>
+        </ul>
+        <span class="topnav__spacer"></span>
       </nav>
 
-      <div class="hero__title-wrap">
-        <h1 class="hero__title hero-heading" data-fade data-y="40" data-delay="0.15"><span class="hero__word">PRIMECUT</span><span class="visually-hidden"> — агентство продвижения</span></h1>
-      </div>
-
-      <div class="hero__object">
-        <div data-fade data-y="30" data-delay="0.6">
-          <div class="magnet media-slot" data-magnet>
-            <img class="media-slot__img" src="hero.png" alt="" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()">
-            <svg class="lens" viewBox="0 0 520 520" aria-hidden="true" focusable="false">
-              <defs>
-                <linearGradient id="lensBarrel" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#4a505a"/><stop offset=".45" stop-color="#1d2026"/><stop offset="1" stop-color="#0b0c0e"/>
-                </linearGradient>
-                <linearGradient id="lensRim" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#BBCCD7"/><stop offset=".5" stop-color="#646973"/><stop offset="1" stop-color="#15171a"/>
-                </linearGradient>
-                <radialGradient id="lensGlass" cx=".5" cy=".5" r=".5">
-                  <stop offset="0" stop-color="#05040a"/><stop offset=".45" stop-color="#120a1c"/><stop offset=".78" stop-color="#2a0f33"/><stop offset="1" stop-color="#0a070d"/>
-                </radialGradient>
-                <radialGradient id="lensGlowA" cx=".32" cy=".72" r=".6">
-                  <stop offset="0" stop-color="#B600A8" stop-opacity=".7"/><stop offset=".5" stop-color="#7621B0" stop-opacity=".28"/><stop offset="1" stop-color="#7621B0" stop-opacity="0"/>
-                </radialGradient>
-                <radialGradient id="lensGlowB" cx=".72" cy=".3" r=".5">
-                  <stop offset="0" stop-color="#BE4C00" stop-opacity=".55"/><stop offset="1" stop-color="#BE4C00" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="lensCoat" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0" stop-color="#BE4C00"/><stop offset=".45" stop-color="#B600A8"/><stop offset=".8" stop-color="#7621B0"/><stop offset="1" stop-color="#18011F"/>
-                </linearGradient>
-                <radialGradient id="lensSpec" cx=".5" cy=".5" r=".5">
-                  <stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-                </radialGradient>
-                <path id="lensTextPath" d="M 260,260 m -197,0 a 197,197 0 1,1 394,0 a 197,197 0 1,1 -394,0"/>
-              </defs>
-              <circle cx="260" cy="260" r="252" fill="url(#lensBarrel)"/>
-              <circle cx="260" cy="260" r="251" fill="none" stroke="url(#lensRim)" stroke-width="3"/>
-              <circle cx="260" cy="260" r="235" fill="none" stroke="#121418" stroke-width="22"/>
-              <circle cx="260" cy="260" r="235" fill="none" stroke="#2e333b" stroke-width="22" stroke-dasharray="3 5"/>
-              <circle cx="260" cy="260" r="214" fill="#0a0b0d" stroke="#3a3f47" stroke-width="2"/>
-              <text fill="#8b939b" font-size="13" letter-spacing="3" font-family="Kanit, Rubik, sans-serif"><textPath href="#lensTextPath" startOffset="3%">PRIMECUT LENS   24–70 mm   1:2.8   Ø82</textPath></text>
-              <circle cx="260" cy="260" r="174" fill="url(#lensGlass)"/>
-              <circle cx="260" cy="260" r="174" fill="url(#lensGlowA)"/>
-              <circle cx="260" cy="260" r="174" fill="url(#lensGlowB)"/>
-              <circle cx="260" cy="260" r="168" fill="none" stroke="url(#lensCoat)" stroke-width="8" opacity=".6"/>
-              <circle cx="260" cy="260" r="122" fill="none" stroke="#fff" stroke-opacity=".07" stroke-width="2"/>
-              <circle cx="260" cy="260" r="74" fill="#050407" stroke="#2a1830" stroke-width="3"/>
-              <circle cx="260" cy="260" r="40" fill="url(#lensGlowA)"/>
-              <circle cx="260" cy="260" r="22" fill="#000"/>
-              <ellipse cx="200" cy="178" rx="74" ry="32" transform="rotate(-35 200 178)" fill="url(#lensSpec)" opacity=".75"/>
-              <circle cx="322" cy="334" r="9" fill="#fff" opacity=".45"/>
-            </svg>
-          </div>
+      <div class="hero__stats">
+        <div class="stat fade-up" style="--i: 2">
+          <p class="stat__num"><span class="stat__plus">+</span><span data-count-pros>6</span></p>
+          <p class="stat__label">специалистов<br>в каталоге</p>
+        </div>
+        <div class="stat fade-up" style="--i: 3">
+          <p class="stat__num">3</p>
+          <p class="stat__label">направления<br>работы</p>
+        </div>
+        <div class="stat fade-up" style="--i: 4">
+          <p class="stat__num">1</p>
+          <p class="stat__label">день<br>на подбор</p>
         </div>
       </div>
 
       <div class="hero__bottom">
-        <p class="hero__text" data-fade data-y="20" data-delay="0.35">агентство продвижения: съёмка, монтаж и&nbsp;smm для вашего бизнеса</p>
-        <div data-fade data-y="20" data-delay="0.5">
-          <a class="contact-btn" href="#contacts">Оставить заявку</a>
+        <div class="hero__row-a">
+          <p class="hero__tagline fade-up" style="--i: 5">Подбираем<br>специалистов<br>под вашу задачу</p>
+          <a class="cta-link fade-up" style="--i: 6" href="#contacts">Оставить заявку
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="hero__row-b">
+          <div class="hero__desc fade-up" style="--i: 7">
+            <p>Агентство продвижения PRIMECUT: видеосъёмка, монтаж и&nbsp;SMM — от&nbsp;первого кадра до&nbsp;публикации</p>
+          </div>
+          <h1 class="hero__title">
+            <span class="visually-hidden">PRIMECUT: </span>
+            <span class="hw"><span style="--w: 0">Снимаем</span></span>
+            <span class="hw"><span style="--w: 1">Монтируем</span></span>
+            <span class="hw"><span style="--w: 2">Продвигаем</span></span>
+          </h1>
         </div>
       </div>
     </section>
 
-    <!-- ================= БЕГУЩИЕ РАБОТЫ =================
-         Картинки берутся из файлов work-01.jpg, work-02.jpg… Список названий — в config.js. -->
-    <section class="marquee" aria-label="Наши работы">
-      <div class="marquee__rows">
-        <div class="marquee__row" data-row="1"></div>
-        <div class="marquee__row" data-row="2"></div>
+    <!-- ================= ЛЕНТЫ КАДРОВ =================
+         Картинки: work-01.jpg … work-12.jpg (список — в config.js). -->
+    <section class="reel" aria-label="Наши работы">
+      <i class="cam-anchor" data-cam="0.86,0.2,0.5" data-cam-m="0.92,0.2,0.32" style="top: 50%"></i>
+      <div class="reel__rows">
+        <div class="reel__row" data-row="1"></div>
+        <div class="reel__row" data-row="2"></div>
       </div>
     </section>
 
-    <!-- ================= О НАС =================
-         Четыре картинки по углам: файлы deco-1.png … deco-4.png (лучше PNG с прозрачным фоном). -->
-    <section class="about" id="about" aria-labelledby="about-title">
-      <div class="about__deco about__deco--tl" data-fade data-x="-80" data-y="0" data-delay="0.1" data-duration="0.9">
-        <div class="media-slot">
-          <img class="media-slot__img" src="deco-1.png" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()">
-          <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-            <defs>
-              <radialGradient id="decoHeart" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#FF9BE0"/><stop offset=".5" stop-color="#B600A8"/><stop offset="1" stop-color="#4d004a"/></radialGradient>
-              <radialGradient id="decoShine" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-            </defs>
-            <path d="M100 176C40 132 14 100 14 66 14 38 36 18 62 18c18 0 31 9 38 23 7-14 20-23 38-23 26 0 48 20 48 48 0 34-26 66-86 110z" fill="url(#decoHeart)"/>
-            <ellipse cx="62" cy="56" rx="30" ry="16" transform="rotate(-30 62 56)" fill="url(#decoShine)"/>
-          </svg>
-        </div>
-      </div>
+    <!-- ================= О НАС + ПОЛАРОИДЫ С ЛЮДЬМИ =================
+         Фото на полароидах: people-1.jpg … people-4.jpg -->
+    <section class="manifesto" id="about" aria-label="О нас">
+      <i class="cam-anchor" data-cam="0.5,0.13,0.5" data-cam-m="0.5,0.1,0.36" style="top: 50%"></i>
+      <figure class="polaroid polaroid--1" data-spin="-8" data-rate="0.03" data-par="-0.12">
+        <div class="polaroid__photo media-slot" data-sil="camera"><img class="media-slot__img" src="people-1.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+      </figure>
+      <figure class="polaroid polaroid--2" data-spin="7" data-rate="-0.025" data-par="0.1">
+        <div class="polaroid__photo media-slot" data-sil="phone"><img class="media-slot__img" src="people-2.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+      </figure>
+      <figure class="polaroid polaroid--3" data-spin="5" data-rate="0.02" data-par="-0.08">
+        <div class="polaroid__photo media-slot" data-sil="headphones"><img class="media-slot__img" src="people-3.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+      </figure>
+      <figure class="polaroid polaroid--4" data-spin="-6" data-rate="-0.03" data-par="0.14">
+        <div class="polaroid__photo media-slot" data-sil="plain"><img class="media-slot__img" src="people-4.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+      </figure>
 
-      <div class="about__deco about__deco--tr" data-fade data-x="80" data-y="0" data-delay="0.15" data-duration="0.9">
-        <div class="media-slot">
-          <img class="media-slot__img" src="deco-2.png" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()">
-          <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-            <defs>
-              <linearGradient id="decoPlay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6A8E"/><stop offset=".5" stop-color="#B600A8"/><stop offset="1" stop-color="#5a1a8f"/></linearGradient>
-            </defs>
-            <rect x="14" y="38" width="172" height="126" rx="38" fill="url(#decoPlay)"/>
-            <rect x="30" y="48" width="140" height="36" rx="18" fill="#fff" opacity=".16"/>
-            <path d="M86 74 136 101 86 128z" fill="#fff" stroke="#fff" stroke-width="12" stroke-linejoin="round"/>
-          </svg>
-        </div>
+      <div class="manifesto__inner">
+        <p class="manifesto__text" data-words>Мы — агентство продвижения PRIMECUT. Подбираем видеографов, монтажёров и&nbsp;SMM&#8209;специалистов под вашу задачу и&nbsp;бюджет, а&nbsp;менеджер ведёт проект от&nbsp;первого кадра до&nbsp;публикации.</p>
+        <a class="cta-link" href="#contacts">Обсудить задачу
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
+    </section>
 
-      <div class="about__deco about__deco--bl" data-fade data-x="-80" data-y="0" data-delay="0.25" data-duration="0.9">
-        <div class="media-slot">
-          <img class="media-slot__img" src="deco-3.png" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()">
-          <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-            <defs>
-              <radialGradient id="decoPlanet" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#FFC48E"/><stop offset=".45" stop-color="#BE4C00"/><stop offset="1" stop-color="#2e0d00"/></radialGradient>
-              <linearGradient id="decoRing" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#BBCCD7"/><stop offset="1" stop-color="#7621B0"/></linearGradient>
-            </defs>
-            <g transform="rotate(-18 100 100)">
-              <ellipse cx="100" cy="100" rx="92" ry="26" fill="none" stroke="url(#decoRing)" stroke-width="9" opacity=".7"/>
-              <circle cx="100" cy="100" r="56" fill="url(#decoPlanet)"/>
-              <path d="M8 100a92 26 0 0 0 184 0" fill="none" stroke="url(#decoRing)" stroke-width="9"/>
-            </g>
-            <ellipse cx="78" cy="72" rx="18" ry="10" transform="rotate(-30 78 72)" fill="#fff" opacity=".35"/>
-          </svg>
+    <!-- ================= ПУТЬ ПРОЕКТА (горизонтальная прокрутка) ================= -->
+    <section class="path" id="path" aria-labelledby="path-title">
+      <i class="cam-anchor cam-anchor--path-start" data-cam="0.6,0.12,0.38" data-cam-m="0.95,0.56,0.28"></i>
+      <i class="cam-anchor cam-anchor--path-end" data-cam="0.88,0.12,0.38" data-cam-m="0.95,0.56,0.28"></i>
+      <div class="path__pin">
+        <div class="path__head">
+          <h2 class="section-title" id="path-title" data-reveal><span class="hw"><span>Путь проекта</span></span></h2>
+          <div class="path__bar" aria-hidden="true"><span></span></div>
         </div>
-      </div>
+        <div class="path__track">
+          <article class="stage">
+            <div class="stage__text">
+              <p class="stage__num">01</p>
+              <h3 class="stage__title">Съёмка</h3>
+              <p class="stage__desc">Видеограф приезжает со&nbsp;своей техникой, светом и&nbsp;звуком. Снимаем рилс, рекламу, интервью и&nbsp;мероприятия.</p>
+            </div>
+            <div class="stage__art art-shoot" aria-hidden="true">
+              <div class="vf">
+                <span class="vf__grid"></span>
+                <div class="vf__person media-slot" data-sil="plain"></div>
+                <span class="vf__focus"></span>
+                <span class="vf__rec">REC</span>
+                <span class="vf__time" data-timecode>00:00:00</span>
+                <span class="vf__corner vf__corner--tl"></span><span class="vf__corner vf__corner--tr"></span>
+                <span class="vf__corner vf__corner--bl"></span><span class="vf__corner vf__corner--br"></span>
+              </div>
+            </div>
+          </article>
 
-      <div class="about__deco about__deco--br" data-fade data-x="80" data-y="0" data-delay="0.3" data-duration="0.9">
-        <div class="media-slot">
-          <img class="media-slot__img" src="deco-4.png" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()">
-          <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-            <defs>
-              <linearGradient id="decoBubble" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F6F9"/><stop offset=".5" stop-color="#BBCCD7"/><stop offset="1" stop-color="#646973"/></linearGradient>
-            </defs>
-            <path d="M62 30h76c24 0 44 20 44 44v24c0 24-20 44-44 44H98l-44 34 8-34c-24 0-44-20-44-44V74c0-24 20-44 44-44z" fill="url(#decoBubble)"/>
-            <circle cx="68" cy="86" r="11" fill="#0C0C0C" opacity=".85"/>
-            <circle cx="100" cy="86" r="11" fill="#0C0C0C" opacity=".85"/>
-            <circle cx="132" cy="86" r="11" fill="#0C0C0C" opacity=".85"/>
-            <rect x="40" y="40" width="96" height="18" rx="9" fill="#fff" opacity=".45"/>
-          </svg>
-        </div>
-      </div>
+          <article class="stage">
+            <div class="stage__text">
+              <p class="stage__num">02</p>
+              <h3 class="stage__title">Монтаж</h3>
+              <p class="stage__desc">Монтажёр собирает ролик: темп, субтитры, звук, цветокоррекция. Вы получаете версии под&nbsp;каждую площадку.</p>
+            </div>
+            <div class="stage__art art-edit" aria-hidden="true">
+              <div class="tl">
+                <div class="tl__track"><span class="tl__clip" style="--o: 40%; --x: 2%; --w: 30%"></span><span class="tl__clip" style="--o: -30%; --x: 34%; --w: 22%"></span><span class="tl__clip" style="--o: 60%; --x: 58%; --w: 38%"></span></div>
+                <div class="tl__track tl__track--b"><span class="tl__clip" style="--o: -50%; --x: 8%; --w: 44%"></span><span class="tl__clip" style="--o: 30%; --x: 56%; --w: 24%"></span></div>
+                <div class="tl__track tl__track--audio"><span class="tl__wave"></span></div>
+                <span class="tl__playhead"></span>
+              </div>
+            </div>
+          </article>
 
-      <div class="about__inner">
-        <div class="about__block">
-          <h2 class="section-heading hero-heading" id="about-title" data-fade data-y="40">О нас</h2>
-          <p class="about__text" data-scroll-text>PRIMECUT — агентство продвижения. Мы подбираем видеографов, монтажёров и SMM-специалистов под вашу задачу и бюджет: от одного рилс до продвижения на год. Проект ведёт менеджер агентства, а вы получаете результат в срок. Давайте сделаем ваш бренд заметным!</p>
+          <article class="stage">
+            <div class="stage__text">
+              <p class="stage__num">03</p>
+              <h3 class="stage__title">Публикация</h3>
+              <p class="stage__desc">SMM-специалист выкладывает контент по&nbsp;плану, пишет тексты, ведёт сторис и&nbsp;настраивает рекламу.</p>
+            </div>
+            <div class="stage__art art-post" aria-hidden="true">
+              <div class="phone">
+                <div class="phone__feed">
+                  <span class="post post--a"></span><span class="post post--b"></span><span class="post post--c"></span>
+                  <span class="post post--a"></span><span class="post post--b"></span><span class="post post--c"></span>
+                </div>
+              </div>
+              <span class="heart heart--1"></span><span class="heart heart--2"></span><span class="heart heart--3"></span>
+            </div>
+          </article>
+
+          <article class="stage">
+            <div class="stage__text">
+              <p class="stage__num">04</p>
+              <h3 class="stage__title">Результат</h3>
+              <p class="stage__desc">Раз в&nbsp;месяц — отчёт по&nbsp;охватам и&nbsp;заявкам. Решаем вместе, что усилить в&nbsp;следующем месяце.</p>
+            </div>
+            <div class="stage__art art-result" aria-hidden="true">
+              <div class="chart">
+                <span class="bar" style="--h: 0.22"></span><span class="bar" style="--h: 0.34"></span><span class="bar" style="--h: 0.3"></span>
+                <span class="bar" style="--h: 0.5"></span><span class="bar" style="--h: 0.62"></span><span class="bar" style="--h: 0.86"></span>
+                <svg class="chart__line" viewBox="0 0 300 200" preserveAspectRatio="none"><path d="M10 170 L60 140 L110 150 L160 105 L210 80 L290 22" pathLength="1"/></svg>
+              </div>
+            </div>
+          </article>
         </div>
-        <a class="contact-btn" href="#contacts">Оставить заявку</a>
       </div>
     </section>
 
     <!-- ================= УСЛУГИ ================= -->
-    <section class="services light-section" id="services" aria-labelledby="services-title">
-      <h2 class="light-heading" id="services-title" data-fade data-y="40">Услуги</h2>
-      <ol class="services__list">
-        <li class="service" data-fade data-delay="0">
-          <span class="service__num" aria-hidden="true">01</span>
-          <div class="service__body">
-            <h3 class="service__name">Видеосъёмка</h3>
-            <p class="service__desc">Рилс и&nbsp;шортс, рекламные и&nbsp;имиджевые ролики, интервью и&nbsp;мероприятия. Видеограф приезжает со&nbsp;своей техникой, светом и&nbsp;звуком.</p>
-            <p class="service__price">от&nbsp;6&nbsp;000&nbsp;₽ за&nbsp;3&nbsp;часа съёмки</p>
+    <section class="services" id="services" aria-labelledby="services-title">
+      <i class="cam-anchor" data-cam="0.93,0.14,0.4" data-cam-m="0.95,0.35,0.3" style="top: 40%"></i>
+      <h2 class="section-title" id="services-title" data-reveal><span class="hw"><span>Услуги</span></span></h2>
+      <div class="svc-grid">
+        <article class="svc" data-tilt>
+          <div class="svc__card">
+            <svg class="svc__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+            <h3 class="svc__name">Видеосъёмка</h3>
+            <p class="svc__desc">Рилс и&nbsp;шортс, рекламные и&nbsp;имиджевые ролики, интервью и&nbsp;мероприятия.</p>
+            <p class="svc__price">от&nbsp;6&nbsp;000&nbsp;₽ за&nbsp;3&nbsp;часа съёмки</p>
           </div>
-        </li>
-        <li class="service" data-fade data-delay="0.1">
-          <span class="service__num" aria-hidden="true">02</span>
-          <div class="service__body">
-            <h3 class="service__name">Монтаж</h3>
-            <p class="service__desc">Динамичный монтаж рилс, шортс и&nbsp;YouTube-выпусков: субтитры, звук, цветокоррекция и&nbsp;моушн-графика.</p>
-            <p class="service__price">от&nbsp;1&nbsp;500&nbsp;₽ за&nbsp;ролик</p>
+        </article>
+        <article class="svc" data-tilt>
+          <div class="svc__card">
+            <svg class="svc__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M8 5v5M14 5v5M10 13l5 2.5-5 2.5z"/></svg>
+            <h3 class="svc__name">Монтаж</h3>
+            <p class="svc__desc">Рилс, шортс и&nbsp;YouTube-выпуски: субтитры, звук, цветокоррекция и&nbsp;моушн-графика.</p>
+            <p class="svc__price">от&nbsp;1&nbsp;500&nbsp;₽ за&nbsp;ролик</p>
           </div>
-        </li>
-        <li class="service" data-fade data-delay="0.2">
-          <span class="service__num" aria-hidden="true">03</span>
-          <div class="service__body">
-            <h3 class="service__name">SMM</h3>
-            <p class="service__desc">Ведение соцсетей и&nbsp;Telegram-каналов: стратегия, контент-план, тексты, сторис и&nbsp;отчёт по&nbsp;охватам каждый месяц.</p>
-            <p class="service__price">от&nbsp;25&nbsp;000&nbsp;₽ в&nbsp;месяц</p>
+        </article>
+        <article class="svc" data-tilt>
+          <div class="svc__card">
+            <svg class="svc__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10 18.5h4M9 8h6M9 11h6M9 14h3"/></svg>
+            <h3 class="svc__name">SMM</h3>
+            <p class="svc__desc">Ведение соцсетей и&nbsp;Telegram-каналов: стратегия, контент-план, тексты и&nbsp;сторис.</p>
+            <p class="svc__price">от&nbsp;25&nbsp;000&nbsp;₽ в&nbsp;месяц</p>
           </div>
-        </li>
-        <li class="service" data-fade data-delay="0.3">
-          <span class="service__num" aria-hidden="true">04</span>
-          <div class="service__body">
-            <h3 class="service__name">Таргетированная реклама</h3>
-            <p class="service__desc">Реклама во&nbsp;ВКонтакте и&nbsp;Telegram Ads: настройка кампаний, тесты креативов и&nbsp;понятные отчёты.</p>
-            <p class="service__price">от&nbsp;20&nbsp;000&nbsp;₽ в&nbsp;месяц</p>
+        </article>
+        <article class="svc" data-tilt>
+          <div class="svc__card">
+            <svg class="svc__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg>
+            <h3 class="svc__name">Таргетированная реклама</h3>
+            <p class="svc__desc">Реклама во&nbsp;ВКонтакте и&nbsp;Telegram Ads: настройка, тесты креативов и&nbsp;понятные отчёты.</p>
+            <p class="svc__price">от&nbsp;20&nbsp;000&nbsp;₽ в&nbsp;месяц</p>
           </div>
-        </li>
-        <li class="service" data-fade data-delay="0.4">
-          <span class="service__num" aria-hidden="true">05</span>
-          <div class="service__body">
-            <h3 class="service__name">Продвижение под ключ</h3>
-            <p class="service__desc">Соберём команду из&nbsp;видеографа, монтажёра и&nbsp;SMM-специалиста и&nbsp;будем вести ваш бренд целиком — от&nbsp;идеи до&nbsp;публикации.</p>
-            <p class="service__price">стоимость — после брифа</p>
+        </article>
+        <article class="svc svc--wide" data-tilt>
+          <div class="svc__card">
+            <svg class="svc__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5-8 4.5-8-4.5z"/><path d="M4 12l8 4.5 8-4.5M4 16.5L12 21l8-4.5"/></svg>
+            <h3 class="svc__name">Продвижение под&nbsp;ключ</h3>
+            <p class="svc__desc">Соберём команду из&nbsp;видеографа, монтажёра и&nbsp;SMM-специалиста и&nbsp;будем вести ваш бренд целиком — от&nbsp;идеи до&nbsp;публикации.</p>
+            <p class="svc__price">стоимость — после брифа</p>
           </div>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ================= ПРОЕКТЫ =================
-         Фото проекта: project-1-1.jpg (левое верхнее), project-1-2.jpg (левое нижнее), project-1-3.jpg (правое высокое).
-         Для второго проекта — project-2-…, для третьего — project-3-….
-         Кнопка «Смотреть проект» появится, когда вместо href="#" будет настоящая ссылка. -->
-    <section class="projects dark-section" id="projects" aria-labelledby="projects-title">
-      <h2 class="section-heading hero-heading" id="projects-title" data-fade data-y="40">Проекты</h2>
-
-      <div class="stack" data-stack>
-        <div class="stack__item">
-          <article class="project-card" style="--i: 0">
-            <div class="project-card__top">
-              <span class="project-card__num" aria-hidden="true">01</span>
-              <div class="project-card__meta">
-                <p class="project-card__cat">Видеосъёмка</p>
-                <h3 class="project-card__name">Съёмка рилс для бизнеса</h3>
-              </div>
-              <a class="ghost-btn" href="#" target="_blank" rel="noopener" data-hide-if-empty>Смотреть проект</a>
-            </div>
-            <div class="project-card__grid">
-              <div class="project-card__col">
-                <div class="shot shot--a media-slot"><img class="media-slot__img" src="project-1-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-                <div class="shot shot--b media-slot"><img class="media-slot__img" src="project-1-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-              </div>
-              <div class="shot shot--c media-slot"><img class="media-slot__img" src="project-1-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="stack__item">
-          <article class="project-card" style="--i: 1">
-            <div class="project-card__top">
-              <span class="project-card__num" aria-hidden="true">02</span>
-              <div class="project-card__meta">
-                <p class="project-card__cat">Монтаж</p>
-                <h3 class="project-card__name">YouTube-выпуски под&nbsp;ключ</h3>
-              </div>
-              <a class="ghost-btn" href="#" target="_blank" rel="noopener" data-hide-if-empty>Смотреть проект</a>
-            </div>
-            <div class="project-card__grid">
-              <div class="project-card__col">
-                <div class="shot shot--a media-slot"><img class="media-slot__img" src="project-2-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-                <div class="shot shot--b media-slot"><img class="media-slot__img" src="project-2-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-              </div>
-              <div class="shot shot--c media-slot"><img class="media-slot__img" src="project-2-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="stack__item">
-          <article class="project-card" style="--i: 2">
-            <div class="project-card__top">
-              <span class="project-card__num" aria-hidden="true">03</span>
-              <div class="project-card__meta">
-                <p class="project-card__cat">SMM</p>
-                <h3 class="project-card__name">Ведение соцсетей бренда</h3>
-              </div>
-              <a class="ghost-btn" href="#" target="_blank" rel="noopener" data-hide-if-empty>Смотреть проект</a>
-            </div>
-            <div class="project-card__grid">
-              <div class="project-card__col">
-                <div class="shot shot--a media-slot"><img class="media-slot__img" src="project-3-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-                <div class="shot shot--b media-slot"><img class="media-slot__img" src="project-3-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-              </div>
-              <div class="shot shot--c media-slot"><img class="media-slot__img" src="project-3-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-            </div>
-          </article>
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- ================= СПЕЦИАЛИСТЫ =================
-         Один специалист — один блок <article class="pro">.
-         data-category: video (съёмка), edit (монтаж) или smm.
-         data-name — имя, которое попадёт в заявку. Ссылка «Портфолио» с href="#" не показывается. -->
-    <section class="specialists light-section" id="specialists" aria-labelledby="specialists-title">
-      <h2 class="light-heading" id="specialists-title" data-fade data-y="40">Специалисты</h2>
-      <p class="specialists__note">Все работают через агентство: договор, сроки и&nbsp;качество — на&nbsp;нас. Не&nbsp;знаете, кого выбрать? Оставьте заявку, подберём сами.</p>
+    <!-- ================= СПЕЦИАЛИСТЫ (карточки переворачиваются) =================
+         Фото: pro-1.jpg … pro-6.jpg по порядку карточек.
+         data-category: video, edit или smm. data-name — имя для заявки.
+         Ссылка «Портфолио» с href="#" не показывается. -->
+    <section class="people" id="specialists" aria-labelledby="specialists-title">
+      <i class="cam-anchor" data-cam="0.955,0.3,0.36" data-cam-m="0.95,0.45,0.28" style="top: 45%"></i>
+      <h2 class="section-title" id="specialists-title" data-reveal><span class="hw"><span>Специалисты</span></span></h2>
+      <p class="section-note">Все работают через агентство: договор, сроки и&nbsp;качество — на&nbsp;нас. Нажмите на&nbsp;карточку, чтобы узнать подробности.</p>
 
       <div class="filters" role="group" aria-label="Показать специалистов">
         <button class="filter" type="button" data-filter="all" aria-pressed="true">Все</button>
@@ -311,49 +295,181 @@
         <button class="filter" type="button" data-filter="smm" aria-pressed="false">SMM</button>
       </div>
 
-      <div class="catalog">
-        <article class="pro" data-category="video" data-name="Антон К.">
-          <div class="pro__who"><h3 class="pro__name">Антон К.</h3><p class="pro__role">Видеограф</p></div>
-          <p class="pro__about">Рилс и&nbsp;рекламные ролики для бизнеса. Снимает на&nbsp;Sony FX3, привозит свой свет и&nbsp;звук.</p>
-          <div class="pro__terms"><p class="pro__price">от&nbsp;6&nbsp;000&nbsp;₽ за&nbsp;3&nbsp;часа</p><p class="pro__format">Выезд по&nbsp;городу</p></div>
-          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+      <div class="people__grid">
+        <article class="person" data-category="video" data-name="Антон К." data-tilt>
+          <div class="person__inner">
+            <div class="person__front">
+              <div class="person__photo media-slot" data-sil="camera"><img class="media-slot__img" src="pro-1.jpg" alt="Антон К." loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+              <div class="person__meta"><h3 class="person__name">Антон К.</h3><p class="person__role">Видеограф</p></div>
+              <button class="person__more" type="button" data-flip-card>Подробнее</button>
+            </div>
+            <div class="person__back" inert>
+              <h3 class="person__name">Антон К.</h3><p class="person__role">Видеограф</p>
+              <p class="person__about">Рилс и&nbsp;рекламные ролики для бизнеса. Снимает на&nbsp;Sony FX3, привозит свой свет и&nbsp;звук.</p>
+              <p class="person__price">от&nbsp;6&nbsp;000&nbsp;₽ за&nbsp;3&nbsp;часа</p><p class="person__format">Выезд по&nbsp;городу</p>
+              <div class="person__actions"><button class="btn-dark" type="button" data-choose>Выбрать</button><a class="person__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a></div>
+              <button class="person__back-btn" type="button" data-flip-card>Назад</button>
+            </div>
+          </div>
         </article>
-        <article class="pro" data-category="video" data-name="Вероника Л.">
-          <div class="pro__who"><h3 class="pro__name">Вероника Л.</h3><p class="pro__role">Видеограф</p></div>
-          <p class="pro__about">Интервью, экспертные видео, мероприятия и&nbsp;backstage. Помогает подготовить героя к&nbsp;съёмке.</p>
-          <div class="pro__terms"><p class="pro__price">от&nbsp;8&nbsp;000&nbsp;₽ за&nbsp;4&nbsp;часа</p><p class="pro__format">Выезд, командировки</p></div>
-          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+
+        <article class="person" data-category="video" data-name="Вероника Л." data-tilt>
+          <div class="person__inner">
+            <div class="person__front">
+              <div class="person__photo media-slot" data-sil="camera"><img class="media-slot__img" src="pro-2.jpg" alt="Вероника Л." loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+              <div class="person__meta"><h3 class="person__name">Вероника Л.</h3><p class="person__role">Видеограф</p></div>
+              <button class="person__more" type="button" data-flip-card>Подробнее</button>
+            </div>
+            <div class="person__back" inert>
+              <h3 class="person__name">Вероника Л.</h3><p class="person__role">Видеограф</p>
+              <p class="person__about">Интервью, экспертные видео, мероприятия и&nbsp;backstage. Помогает подготовить героя к&nbsp;съёмке.</p>
+              <p class="person__price">от&nbsp;8&nbsp;000&nbsp;₽ за&nbsp;4&nbsp;часа</p><p class="person__format">Выезд, командировки</p>
+              <div class="person__actions"><button class="btn-dark" type="button" data-choose>Выбрать</button><a class="person__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a></div>
+              <button class="person__back-btn" type="button" data-flip-card>Назад</button>
+            </div>
+          </div>
         </article>
-        <article class="pro" data-category="edit" data-name="Максим Р.">
-          <div class="pro__who"><h3 class="pro__name">Максим Р.</h3><p class="pro__role">Монтажёр</p></div>
-          <p class="pro__about">Динамичный монтаж рилс и&nbsp;шортс: субтитры, звук, трекинг, переходы под&nbsp;музыку.</p>
-          <div class="pro__terms"><p class="pro__price">от&nbsp;1&nbsp;500&nbsp;₽ за&nbsp;ролик</p><p class="pro__format">Удалённо</p></div>
-          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+
+        <article class="person" data-category="edit" data-name="Максим Р." data-tilt>
+          <div class="person__inner">
+            <div class="person__front">
+              <div class="person__photo media-slot" data-sil="headphones"><img class="media-slot__img" src="pro-3.jpg" alt="Максим Р." loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+              <div class="person__meta"><h3 class="person__name">Максим Р.</h3><p class="person__role">Монтажёр</p></div>
+              <button class="person__more" type="button" data-flip-card>Подробнее</button>
+            </div>
+            <div class="person__back" inert>
+              <h3 class="person__name">Максим Р.</h3><p class="person__role">Монтажёр</p>
+              <p class="person__about">Динамичный монтаж рилс и&nbsp;шортс: субтитры, звук, трекинг, переходы под&nbsp;музыку.</p>
+              <p class="person__price">от&nbsp;1&nbsp;500&nbsp;₽ за&nbsp;ролик</p><p class="person__format">Удалённо</p>
+              <div class="person__actions"><button class="btn-dark" type="button" data-choose>Выбрать</button><a class="person__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a></div>
+              <button class="person__back-btn" type="button" data-flip-card>Назад</button>
+            </div>
+          </div>
         </article>
-        <article class="pro" data-category="edit" data-name="Дарья С.">
-          <div class="pro__who"><h3 class="pro__name">Дарья С.</h3><p class="pro__role">Монтажёр</p></div>
-          <p class="pro__about">YouTube-выпуски и&nbsp;подкасты, цветокоррекция, моушн-титры и&nbsp;обложки.</p>
-          <div class="pro__terms"><p class="pro__price">от&nbsp;4&nbsp;000&nbsp;₽ за&nbsp;выпуск</p><p class="pro__format">Удалённо</p></div>
-          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+
+        <article class="person" data-category="edit" data-name="Дарья С." data-tilt>
+          <div class="person__inner">
+            <div class="person__front">
+              <div class="person__photo media-slot" data-sil="headphones"><img class="media-slot__img" src="pro-4.jpg" alt="Дарья С." loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+              <div class="person__meta"><h3 class="person__name">Дарья С.</h3><p class="person__role">Монтажёр</p></div>
+              <button class="person__more" type="button" data-flip-card>Подробнее</button>
+            </div>
+            <div class="person__back" inert>
+              <h3 class="person__name">Дарья С.</h3><p class="person__role">Монтажёр</p>
+              <p class="person__about">YouTube-выпуски и&nbsp;подкасты, цветокоррекция, моушн-титры и&nbsp;обложки.</p>
+              <p class="person__price">от&nbsp;4&nbsp;000&nbsp;₽ за&nbsp;выпуск</p><p class="person__format">Удалённо</p>
+              <div class="person__actions"><button class="btn-dark" type="button" data-choose>Выбрать</button><a class="person__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a></div>
+              <button class="person__back-btn" type="button" data-flip-card>Назад</button>
+            </div>
+          </div>
         </article>
-        <article class="pro" data-category="smm" data-name="Екатерина М.">
-          <div class="pro__who"><h3 class="pro__name">Екатерина М.</h3><p class="pro__role">SMM-специалист</p></div>
-          <p class="pro__about">Ведение ВКонтакте и&nbsp;Telegram-каналов: контент-план, тексты, сторис, отчёт по&nbsp;охватам раз в&nbsp;месяц.</p>
-          <div class="pro__terms"><p class="pro__price">от&nbsp;25&nbsp;000&nbsp;₽ в&nbsp;месяц</p><p class="pro__format">Удалённо</p></div>
-          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+
+        <article class="person" data-category="smm" data-name="Екатерина М." data-tilt>
+          <div class="person__inner">
+            <div class="person__front">
+              <div class="person__photo media-slot" data-sil="phone"><img class="media-slot__img" src="pro-5.jpg" alt="Екатерина М." loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+              <div class="person__meta"><h3 class="person__name">Екатерина М.</h3><p class="person__role">SMM-специалист</p></div>
+              <button class="person__more" type="button" data-flip-card>Подробнее</button>
+            </div>
+            <div class="person__back" inert>
+              <h3 class="person__name">Екатерина М.</h3><p class="person__role">SMM-специалист</p>
+              <p class="person__about">Ведение ВКонтакте и&nbsp;Telegram-каналов: контент-план, тексты, сторис, отчёт по&nbsp;охватам раз в&nbsp;месяц.</p>
+              <p class="person__price">от&nbsp;25&nbsp;000&nbsp;₽ в&nbsp;месяц</p><p class="person__format">Удалённо</p>
+              <div class="person__actions"><button class="btn-dark" type="button" data-choose>Выбрать</button><a class="person__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a></div>
+              <button class="person__back-btn" type="button" data-flip-card>Назад</button>
+            </div>
+          </div>
         </article>
-        <article class="pro" data-category="smm" data-name="Олег Т.">
-          <div class="pro__who"><h3 class="pro__name">Олег Т.</h3><p class="pro__role">Таргетолог</p></div>
-          <p class="pro__about">Реклама во&nbsp;ВКонтакте и&nbsp;Telegram Ads. Настройка, тесты креативов, еженедельные отчёты.</p>
-          <div class="pro__terms"><p class="pro__price">от&nbsp;20&nbsp;000&nbsp;₽ в&nbsp;месяц</p><p class="pro__format">Удалённо</p></div>
-          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+
+        <article class="person" data-category="smm" data-name="Олег Т." data-tilt>
+          <div class="person__inner">
+            <div class="person__front">
+              <div class="person__photo media-slot" data-sil="phone"><img class="media-slot__img" src="pro-6.jpg" alt="Олег Т." loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+              <div class="person__meta"><h3 class="person__name">Олег Т.</h3><p class="person__role">Таргетолог</p></div>
+              <button class="person__more" type="button" data-flip-card>Подробнее</button>
+            </div>
+            <div class="person__back" inert>
+              <h3 class="person__name">Олег Т.</h3><p class="person__role">Таргетолог</p>
+              <p class="person__about">Реклама во&nbsp;ВКонтакте и&nbsp;Telegram Ads. Настройка, тесты креативов, еженедельные отчёты.</p>
+              <p class="person__price">от&nbsp;20&nbsp;000&nbsp;₽ в&nbsp;месяц</p><p class="person__format">Удалённо</p>
+              <div class="person__actions"><button class="btn-dark" type="button" data-choose>Выбрать</button><a class="person__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a></div>
+              <button class="person__back-btn" type="button" data-flip-card>Назад</button>
+            </div>
+          </div>
         </article>
       </div>
     </section>
 
+    <!-- ================= ПЛЁНКА ================= -->
+    <div class="filmstrip" aria-hidden="true">
+      <i class="cam-anchor" data-cam="0.5,0.5,0.62" data-cam-m="0.5,0.5,0.46" style="top: 50%"></i>
+      <div class="filmstrip__band"><div class="filmstrip__track" data-strip></div></div>
+    </div>
+
+    <!-- ================= ПРОЕКТЫ (стопка карточек) =================
+         Фото: project-1-1.jpg, project-1-2.jpg, project-1-3.jpg и так же для 2 и 3.
+         Кнопка «Смотреть проект» появится, когда вместо href="#" будет ссылка. -->
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <i class="cam-anchor" data-cam="0.955,0.35,0.36" data-cam-m="0.95,0.3,0.28" style="top: 20%"></i>
+      <i class="cam-anchor" data-cam="0.955,0.7,0.36" data-cam-m="0.95,0.7,0.28" style="top: 85%"></i>
+      <h2 class="section-title" id="projects-title" data-reveal><span class="hw"><span>Проекты</span></span></h2>
+
+      <div class="stack" data-stack>
+        <div class="stack__item">
+          <article class="project" style="--i: 0">
+            <div class="project__top">
+              <p class="project__num">01</p>
+              <div class="project__meta"><p class="project__cat">Видеосъёмка</p><h3 class="project__name">Съёмка рилс для бизнеса</h3></div>
+              <a class="btn-outline" href="#" target="_blank" rel="noopener" data-hide-if-empty>Смотреть проект</a>
+            </div>
+            <div class="project__grid">
+              <div class="project__col">
+                <div class="shot shot--a media-slot" data-sil="camera"><img class="media-slot__img" src="project-1-1.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+                <div class="shot shot--b media-slot"><img class="media-slot__img" src="project-1-2.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+              </div>
+              <div class="shot shot--c media-slot" data-sil="plain"><img class="media-slot__img" src="project-1-3.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+            </div>
+          </article>
+        </div>
+        <div class="stack__item">
+          <article class="project" style="--i: 1">
+            <div class="project__top">
+              <p class="project__num">02</p>
+              <div class="project__meta"><p class="project__cat">Монтаж</p><h3 class="project__name">YouTube-выпуски под&nbsp;ключ</h3></div>
+              <a class="btn-outline" href="#" target="_blank" rel="noopener" data-hide-if-empty>Смотреть проект</a>
+            </div>
+            <div class="project__grid">
+              <div class="project__col">
+                <div class="shot shot--a media-slot"><img class="media-slot__img" src="project-2-1.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+                <div class="shot shot--b media-slot" data-sil="headphones"><img class="media-slot__img" src="project-2-2.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+              </div>
+              <div class="shot shot--c media-slot"><img class="media-slot__img" src="project-2-3.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+            </div>
+          </article>
+        </div>
+        <div class="stack__item">
+          <article class="project" style="--i: 2">
+            <div class="project__top">
+              <p class="project__num">03</p>
+              <div class="project__meta"><p class="project__cat">SMM</p><h3 class="project__name">Ведение соцсетей бренда</h3></div>
+              <a class="btn-outline" href="#" target="_blank" rel="noopener" data-hide-if-empty>Смотреть проект</a>
+            </div>
+            <div class="project__grid">
+              <div class="project__col">
+                <div class="shot shot--a media-slot" data-sil="phone"><img class="media-slot__img" src="project-3-1.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+                <div class="shot shot--b media-slot"><img class="media-slot__img" src="project-3-2.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+              </div>
+              <div class="shot shot--c media-slot"><img class="media-slot__img" src="project-3-3.jpg" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= КОНТАКТЫ И ЗАЯВКИ ================= -->
-    <section class="contact dark-section" id="contacts" aria-labelledby="contacts-title">
-      <h2 class="section-heading hero-heading" id="contacts-title" data-fade data-y="40">Контакты</h2>
+    <section class="contact" id="contacts" aria-labelledby="contacts-title">
+      <i class="cam-anchor" data-cam="0.22,0.8,0.55" data-cam-m="0.95,0.25,0.3" style="top: 30%"></i>
+      <h2 class="section-title" id="contacts-title" data-reveal><span class="hw"><span>Контакты</span></span></h2>
 
       <div class="contact__grid">
         <div class="contact__info">
@@ -440,7 +556,7 @@
               <label for="r-consent">Согласен на&nbsp;обработку персональных данных по&nbsp;<a href="privacy.html" target="_blank" rel="noopener">политике конфиденциальности</a></label>
               <p class="field__error" id="r-consent-error" hidden>Без согласия мы не&nbsp;можем принять заявку</p>
             </div>
-            <button class="contact-btn contact-btn--block" type="submit">Отправить заявку</button>
+            <button class="btn-dark btn-dark--block" type="submit">Отправить заявку</button>
             <div class="form__status" role="status" aria-live="polite" tabindex="-1" hidden></div>
           </form>
 
@@ -485,7 +601,7 @@
               <label for="j-consent">Согласен на&nbsp;обработку персональных данных по&nbsp;<a href="privacy.html" target="_blank" rel="noopener">политике конфиденциальности</a></label>
               <p class="field__error" id="j-consent-error" hidden>Без согласия мы не&nbsp;можем принять анкету</p>
             </div>
-            <button class="contact-btn contact-btn--block" type="submit">Отправить анкету</button>
+            <button class="btn-dark btn-dark--block" type="submit">Отправить анкету</button>
             <div class="form__status" role="status" aria-live="polite" tabindex="-1" hidden></div>
           </form>
         </div>
@@ -494,11 +610,15 @@
   </main>
 
   <footer class="footer">
-    <p>© <span data-year>2026</span> PRIMECUT. Агентство продвижения.</p>
-    <ul class="footer__links">
-      <li><a href="privacy.html">Политика конфиденциальности</a></li>
-      <li><a href="#contacts" data-open-tab="tab-join">Стать специалистом</a></li>
-    </ul>
+    <i class="cam-anchor" data-cam="0.5,0.3,0.7" data-cam-m="0.5,0.4,0.5" style="top: 0"></i>
+    <p class="footer__mark" aria-hidden="true">PRIMECUT</p>
+    <div class="footer__row">
+      <p>© <span data-year>2026</span> PRIMECUT. Агентство продвижения.</p>
+      <ul class="footer__links">
+        <li><a href="privacy.html">Политика конфиденциальности</a></li>
+        <li><a href="#contacts" data-open-tab="tab-join">Стать специалистом</a></li>
+      </ul>
+    </div>
   </footer>
 </body>
 </html>
