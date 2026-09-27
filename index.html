@@ -1,474 +1,504 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PRIMECUT — агентство продвижения: видеосъёмка, монтаж, SMM</title>
   <meta name="description" content="PRIMECUT подбирает видеографов, монтажёров и SMM-специалистов под задачу и бюджет. Съёмка рилс и рекламы, монтаж, ведение соцсетей и таргет.">
-  <meta name="theme-color" content="#EEF0F3">
-
+  <meta name="theme-color" content="#0C0C0C">
   <meta property="og:type" content="website">
   <meta property="og:title" content="PRIMECUT — агентство продвижения">
-  <meta property="og:description" content="Видеографы, монтажёры и SMM-специалисты для вашего бизнеса. Проект ведёт менеджер агентства.">
+  <meta property="og:description" content="Видеографы, монтажёры и SMM-специалисты для вашего бизнеса.">
   <meta property="og:locale" content="ru_RU">
-  <!-- Картинка для превью ссылок (1200×630). Загрузите файл в assets и раскомментируйте:
-  <meta property="og:image" content="https://ВАШ-АДРЕС/assets/og-image.jpg"> -->
-
+  <script>document.documentElement.className = "js";</script>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&family=Rubik:wght@300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
   <script src="config.js" defer></script>
   <script src="main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
 
-  <!-- ================= ШАПКА ================= -->
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="logo" href="#top" aria-label="PRIMECUT, наверх">PRIMECUT</a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="nav-toggle__bars" aria-hidden="true"></span>
-        <span>Меню</span>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Разделы сайта">
-        <ul class="site-nav__list">
-          <li><a href="#services">Услуги</a></li>
-          <li><a href="#catalog">Специалисты</a></li>
-          <li><a href="#process">Как работаем</a></li>
-          <li><a href="#join">Специалистам</a></li>
-          <li><a href="#contacts">Контакты</a></li>
-        </ul>
-        <a class="btn btn--primary site-nav__cta" href="#request">Оставить заявку</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
+  <main id="main" class="page">
 
     <!-- ================= ПЕРВЫЙ ЭКРАН =================
-         Логотип нарисован как дорожка монтажной программы:
-         клип «PRIMECUT» разрезан в месте, где стоит курсор воспроизведения. -->
+         Главная картинка: загрузите в репозиторий файл hero.png — он встанет вместо объектива. -->
     <section class="hero" id="top">
-      <div class="container">
-        <div class="timeline" aria-hidden="true">
-          <span class="timeline__label"></span>
-          <div class="timeline__ruler"><span>00:00:00:00</span></div>
+      <nav class="hero__nav" aria-label="Разделы сайта" data-fade data-y="-20" data-delay="0">
+        <a href="#services">Услуги</a>
+        <a href="#projects">Проекты</a>
+        <a href="#specialists">Специалисты</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
 
-          <span class="timeline__label">V1</span>
-          <div class="timeline__video">
-            <div class="clip"><span class="clip__file">primecut_final_v2.mp4</span><span class="clip__word">PRIME</span></div>
-            <div class="timeline__cut">
-              <div class="playhead"><span class="playhead__time">00:00:04:12</span></div>
-            </div>
-            <div class="clip clip--tail"><span class="clip__file">primecut_final_v2.mp4</span><span class="clip__word">CUT</span></div>
-          </div>
+      <div class="hero__title-wrap">
+        <h1 class="hero__title hero-heading" data-fade data-y="40" data-delay="0.15"><span class="hero__word">PRIMECUT</span><span class="visually-hidden"> — агентство продвижения</span></h1>
+      </div>
 
-          <span class="timeline__label">A1</span>
-          <div class="timeline__audio">
-            <svg viewBox="0 0 600 40" preserveAspectRatio="none" focusable="false"><path d="M2.0 15.6V24.4M6.0 15.3V24.7M10.0 12.6V27.4M14.0 14.2V25.8M18.0 11.2V28.8M22.0 11.2V28.8M26.0 12.3V27.7M30.0 8.8V31.2M34.0 11.3V28.7M38.0 8.0V32.0M42.0 10.3V29.7M46.0 9.8V30.2M50.0 6.9V33.1M54.0 3.5V36.5M58.0 9.1V30.9M62.0 8.3V31.7M66.0 5.3V34.7M70.0 3.1V36.9M74.0 6.4V33.6M78.0 8.2V31.8M82.0 4.7V35.3M86.0 11.7V28.3M90.0 7.3V32.7M94.0 11.5V28.5M98.0 13.0V27.0M102.0 13.8V26.2M106.0 13.8V26.2M110.0 12.8V27.2M114.0 15.8V24.2M118.0 14.2V25.8M122.0 13.0V27.0M126.0 13.3V26.7M130.0 11.7V28.3M134.0 13.4V26.6M138.0 13.0V27.0M142.0 11.7V28.3M146.0 8.4V31.6M150.0 9.6V30.4M154.0 10.0V30.0M158.0 8.0V32.0M162.0 8.8V31.2M166.0 9.8V30.2M170.0 6.6V33.4M174.0 7.4V32.6M178.0 10.6V29.4M182.0 8.8V31.2M186.0 9.5V30.5M190.0 7.9V32.1M194.0 9.3V30.7M198.0 12.1V27.9M202.0 9.2V30.8M206.0 13.9V26.1M210.0 13.0V27.0M214.0 12.2V27.8M218.0 15.1V24.9M222.0 14.4V25.6M226.0 16.2V23.8M230.0 14.4V25.6M234.0 13.6V26.4M238.0 13.8V26.2M242.0 12.3V27.7M246.0 14.1V25.9M250.0 12.3V27.7M254.0 12.5V27.5M258.0 12.4V27.6M262.0 12.8V27.2M266.0 11.0V29.0M270.0 10.5V29.5M274.0 12.6V27.4M278.0 11.8V28.2M282.0 14.4V25.6M286.0 11.8V28.2M290.0 12.1V27.9M294.0 10.8V29.2M298.0 11.7V28.3M302.0 14.0V26.0M306.0 13.8V26.2M310.0 12.9V27.1M314.0 15.5V24.5M318.0 14.1V25.9M322.0 15.3V24.7M326.0 15.6V24.4M330.0 15.9V24.1M334.0 13.9V26.1M338.0 16.0V24.0M342.0 15.8V24.2M346.0 15.2V24.8M350.0 13.5V26.5M354.0 15.8V24.2M358.0 14.5V25.5M362.0 13.9V26.1M366.0 12.5V27.5M370.0 12.5V27.5M374.0 12.2V27.8M378.0 14.2V25.8M382.0 13.5V26.5M386.0 13.6V26.4M390.0 11.3V28.7M394.0 10.9V29.1M398.0 14.2V25.8M402.0 14.0V26.0M406.0 13.7V26.3M410.0 13.7V26.3M414.0 12.6V27.4M418.0 12.2V27.8M422.0 13.7V26.3M426.0 14.9V25.1M430.0 13.4V26.6M434.0 13.8V26.2M438.0 13.3V26.7M442.0 12.3V27.7M446.0 13.6V26.4M450.0 14.6V25.4M454.0 14.7V25.3M458.0 14.1V25.9M462.0 15.7V24.3M466.0 12.2V27.8M470.0 12.0V28.0M474.0 11.0V29.0M478.0 10.7V29.3M482.0 12.0V28.0M486.0 11.5V28.5M490.0 12.7V27.3M494.0 9.3V30.7M498.0 12.3V27.7M502.0 12.0V28.0M506.0 10.9V29.1M510.0 11.0V29.0M514.0 9.7V30.3M518.0 11.6V28.4M522.0 12.0V28.0M526.0 11.1V28.9M530.0 11.6V28.4M534.0 10.2V29.8M538.0 12.6V27.4M542.0 8.2V31.8M546.0 10.3V29.7M550.0 13.3V26.7M554.0 13.4V26.6M558.0 13.7V26.3M562.0 14.4V25.6M566.0 15.9V24.1M570.0 13.4V26.6M574.0 11.8V28.2M578.0 12.8V27.2M582.0 11.8V28.2M586.0 13.1V26.9M590.0 12.3V27.7M594.0 10.2V29.8M598.0 10.1V29.9"/></svg>
+      <div class="hero__object">
+        <div data-fade data-y="30" data-delay="0.6">
+          <div class="magnet media-slot" data-magnet>
+            <img class="media-slot__img" src="hero.png" alt="" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()">
+            <svg class="lens" viewBox="0 0 520 520" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="lensBarrel" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#4a505a"/><stop offset=".45" stop-color="#1d2026"/><stop offset="1" stop-color="#0b0c0e"/>
+                </linearGradient>
+                <linearGradient id="lensRim" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#BBCCD7"/><stop offset=".5" stop-color="#646973"/><stop offset="1" stop-color="#15171a"/>
+                </linearGradient>
+                <radialGradient id="lensGlass" cx=".5" cy=".5" r=".5">
+                  <stop offset="0" stop-color="#05040a"/><stop offset=".45" stop-color="#120a1c"/><stop offset=".78" stop-color="#2a0f33"/><stop offset="1" stop-color="#0a070d"/>
+                </radialGradient>
+                <radialGradient id="lensGlowA" cx=".32" cy=".72" r=".6">
+                  <stop offset="0" stop-color="#B600A8" stop-opacity=".7"/><stop offset=".5" stop-color="#7621B0" stop-opacity=".28"/><stop offset="1" stop-color="#7621B0" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="lensGlowB" cx=".72" cy=".3" r=".5">
+                  <stop offset="0" stop-color="#BE4C00" stop-opacity=".55"/><stop offset="1" stop-color="#BE4C00" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="lensCoat" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0" stop-color="#BE4C00"/><stop offset=".45" stop-color="#B600A8"/><stop offset=".8" stop-color="#7621B0"/><stop offset="1" stop-color="#18011F"/>
+                </linearGradient>
+                <radialGradient id="lensSpec" cx=".5" cy=".5" r=".5">
+                  <stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                </radialGradient>
+                <path id="lensTextPath" d="M 260,260 m -197,0 a 197,197 0 1,1 394,0 a 197,197 0 1,1 -394,0"/>
+              </defs>
+              <circle cx="260" cy="260" r="252" fill="url(#lensBarrel)"/>
+              <circle cx="260" cy="260" r="251" fill="none" stroke="url(#lensRim)" stroke-width="3"/>
+              <circle cx="260" cy="260" r="235" fill="none" stroke="#121418" stroke-width="22"/>
+              <circle cx="260" cy="260" r="235" fill="none" stroke="#2e333b" stroke-width="22" stroke-dasharray="3 5"/>
+              <circle cx="260" cy="260" r="214" fill="#0a0b0d" stroke="#3a3f47" stroke-width="2"/>
+              <text fill="#8b939b" font-size="13" letter-spacing="3" font-family="Kanit, Rubik, sans-serif"><textPath href="#lensTextPath" startOffset="3%">PRIMECUT LENS   24–70 mm   1:2.8   Ø82</textPath></text>
+              <circle cx="260" cy="260" r="174" fill="url(#lensGlass)"/>
+              <circle cx="260" cy="260" r="174" fill="url(#lensGlowA)"/>
+              <circle cx="260" cy="260" r="174" fill="url(#lensGlowB)"/>
+              <circle cx="260" cy="260" r="168" fill="none" stroke="url(#lensCoat)" stroke-width="8" opacity=".6"/>
+              <circle cx="260" cy="260" r="122" fill="none" stroke="#fff" stroke-opacity=".07" stroke-width="2"/>
+              <circle cx="260" cy="260" r="74" fill="#050407" stroke="#2a1830" stroke-width="3"/>
+              <circle cx="260" cy="260" r="40" fill="url(#lensGlowA)"/>
+              <circle cx="260" cy="260" r="22" fill="#000"/>
+              <ellipse cx="200" cy="178" rx="74" ry="32" transform="rotate(-35 200 178)" fill="url(#lensSpec)" opacity=".75"/>
+              <circle cx="322" cy="334" r="9" fill="#fff" opacity=".45"/>
+            </svg>
           </div>
         </div>
+      </div>
 
-        <div class="hero__grid">
-          <h1 class="hero__title">Съёмка, монтаж и&nbsp;SMM для вашего бизнеса</h1>
-          <div class="hero__side">
-            <p class="hero__lead">PRIMECUT подбирает видеографов, монтажёров и&nbsp;SMM-специалистов под задачу и&nbsp;бюджет — от&nbsp;одного рилс до&nbsp;продвижения на&nbsp;год. Проект ведёт менеджер агентства.</p>
-            <div class="hero__actions">
-              <a class="btn btn--primary btn--large" href="#request">Оставить заявку</a>
-              <a class="btn btn--quiet btn--large" href="#catalog">Смотреть специалистов</a>
-            </div>
-          </div>
+      <div class="hero__bottom">
+        <p class="hero__text" data-fade data-y="20" data-delay="0.35">агентство продвижения: съёмка, монтаж и&nbsp;smm для вашего бизнеса</p>
+        <div data-fade data-y="20" data-delay="0.5">
+          <a class="contact-btn" href="#contacts">Оставить заявку</a>
         </div>
+      </div>
+    </section>
+
+    <!-- ================= БЕГУЩИЕ РАБОТЫ =================
+         Картинки берутся из файлов work-01.jpg, work-02.jpg… Список названий — в config.js. -->
+    <section class="marquee" aria-label="Наши работы">
+      <div class="marquee__rows">
+        <div class="marquee__row" data-row="1"></div>
+        <div class="marquee__row" data-row="2"></div>
+      </div>
+    </section>
+
+    <!-- ================= О НАС =================
+         Четыре картинки по углам: файлы deco-1.png … deco-4.png (лучше PNG с прозрачным фоном). -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about__deco about__deco--tl" data-fade data-x="-80" data-y="0" data-delay="0.1" data-duration="0.9">
+        <div class="media-slot">
+          <img class="media-slot__img" src="deco-1.png" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()">
+          <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+            <defs>
+              <radialGradient id="decoHeart" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#FF9BE0"/><stop offset=".5" stop-color="#B600A8"/><stop offset="1" stop-color="#4d004a"/></radialGradient>
+              <radialGradient id="decoShine" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+            </defs>
+            <path d="M100 176C40 132 14 100 14 66 14 38 36 18 62 18c18 0 31 9 38 23 7-14 20-23 38-23 26 0 48 20 48 48 0 34-26 66-86 110z" fill="url(#decoHeart)"/>
+            <ellipse cx="62" cy="56" rx="30" ry="16" transform="rotate(-30 62 56)" fill="url(#decoShine)"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="about__deco about__deco--tr" data-fade data-x="80" data-y="0" data-delay="0.15" data-duration="0.9">
+        <div class="media-slot">
+          <img class="media-slot__img" src="deco-2.png" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()">
+          <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="decoPlay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6A8E"/><stop offset=".5" stop-color="#B600A8"/><stop offset="1" stop-color="#5a1a8f"/></linearGradient>
+            </defs>
+            <rect x="14" y="38" width="172" height="126" rx="38" fill="url(#decoPlay)"/>
+            <rect x="30" y="48" width="140" height="36" rx="18" fill="#fff" opacity=".16"/>
+            <path d="M86 74 136 101 86 128z" fill="#fff" stroke="#fff" stroke-width="12" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="about__deco about__deco--bl" data-fade data-x="-80" data-y="0" data-delay="0.25" data-duration="0.9">
+        <div class="media-slot">
+          <img class="media-slot__img" src="deco-3.png" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()">
+          <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+            <defs>
+              <radialGradient id="decoPlanet" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#FFC48E"/><stop offset=".45" stop-color="#BE4C00"/><stop offset="1" stop-color="#2e0d00"/></radialGradient>
+              <linearGradient id="decoRing" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#BBCCD7"/><stop offset="1" stop-color="#7621B0"/></linearGradient>
+            </defs>
+            <g transform="rotate(-18 100 100)">
+              <ellipse cx="100" cy="100" rx="92" ry="26" fill="none" stroke="url(#decoRing)" stroke-width="9" opacity=".7"/>
+              <circle cx="100" cy="100" r="56" fill="url(#decoPlanet)"/>
+              <path d="M8 100a92 26 0 0 0 184 0" fill="none" stroke="url(#decoRing)" stroke-width="9"/>
+            </g>
+            <ellipse cx="78" cy="72" rx="18" ry="10" transform="rotate(-30 78 72)" fill="#fff" opacity=".35"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="about__deco about__deco--br" data-fade data-x="80" data-y="0" data-delay="0.3" data-duration="0.9">
+        <div class="media-slot">
+          <img class="media-slot__img" src="deco-4.png" alt="" loading="lazy" onload="this.parentNode.classList.add('has-media')" onerror="this.remove()">
+          <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="decoBubble" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F6F9"/><stop offset=".5" stop-color="#BBCCD7"/><stop offset="1" stop-color="#646973"/></linearGradient>
+            </defs>
+            <path d="M62 30h76c24 0 44 20 44 44v24c0 24-20 44-44 44H98l-44 34 8-34c-24 0-44-20-44-44V74c0-24 20-44 44-44z" fill="url(#decoBubble)"/>
+            <circle cx="68" cy="86" r="11" fill="#0C0C0C" opacity=".85"/>
+            <circle cx="100" cy="86" r="11" fill="#0C0C0C" opacity=".85"/>
+            <circle cx="132" cy="86" r="11" fill="#0C0C0C" opacity=".85"/>
+            <rect x="40" y="40" width="96" height="18" rx="9" fill="#fff" opacity=".45"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="about__inner">
+        <div class="about__block">
+          <h2 class="section-heading hero-heading" id="about-title" data-fade data-y="40">О нас</h2>
+          <p class="about__text" data-scroll-text>PRIMECUT — агентство продвижения. Мы подбираем видеографов, монтажёров и SMM-специалистов под вашу задачу и бюджет: от одного рилс до продвижения на год. Проект ведёт менеджер агентства, а вы получаете результат в срок. Давайте сделаем ваш бренд заметным!</p>
+        </div>
+        <a class="contact-btn" href="#contacts">Оставить заявку</a>
       </div>
     </section>
 
     <!-- ================= УСЛУГИ ================= -->
-    <section class="section" id="services" aria-labelledby="services-title">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" id="services-title">Что мы делаем</h2>
-          <p class="section__note">Можно заказать одну услугу или всё сразу: снимем, смонтируем и&nbsp;выложим по&nbsp;контент-плану.</p>
-        </div>
-
-        <div class="services">
-          <article class="service" data-category="video">
-            <h3 class="service__title">Видеосъёмка</h3>
-            <ul class="service__list">
-              <li>Рилс и&nbsp;шортс для бизнеса</li>
-              <li>Имиджевые и&nbsp;рекламные ролики</li>
-              <li>Интервью и&nbsp;экспертные видео</li>
-              <li>Мероприятия и&nbsp;backstage</li>
-            </ul>
+    <section class="services light-section" id="services" aria-labelledby="services-title">
+      <h2 class="light-heading" id="services-title" data-fade data-y="40">Услуги</h2>
+      <ol class="services__list">
+        <li class="service" data-fade data-delay="0">
+          <span class="service__num" aria-hidden="true">01</span>
+          <div class="service__body">
+            <h3 class="service__name">Видеосъёмка</h3>
+            <p class="service__desc">Рилс и&nbsp;шортс, рекламные и&nbsp;имиджевые ролики, интервью и&nbsp;мероприятия. Видеограф приезжает со&nbsp;своей техникой, светом и&nbsp;звуком.</p>
             <p class="service__price">от&nbsp;6&nbsp;000&nbsp;₽ за&nbsp;3&nbsp;часа съёмки</p>
-            <button class="link-btn" type="button" data-show-category="video">Смотреть видеографов</button>
-          </article>
-
-          <article class="service" data-category="edit">
-            <h3 class="service__title">Монтаж</h3>
-            <ul class="service__list">
-              <li>Рилс, шортс, клипы для TikTok</li>
-              <li>YouTube-выпуски и&nbsp;подкасты</li>
-              <li>Субтитры, звук, цветокоррекция</li>
-              <li>Моушн-графика и&nbsp;титры</li>
-            </ul>
+          </div>
+        </li>
+        <li class="service" data-fade data-delay="0.1">
+          <span class="service__num" aria-hidden="true">02</span>
+          <div class="service__body">
+            <h3 class="service__name">Монтаж</h3>
+            <p class="service__desc">Динамичный монтаж рилс, шортс и&nbsp;YouTube-выпусков: субтитры, звук, цветокоррекция и&nbsp;моушн-графика.</p>
             <p class="service__price">от&nbsp;1&nbsp;500&nbsp;₽ за&nbsp;ролик</p>
-            <button class="link-btn" type="button" data-show-category="edit">Смотреть монтажёров</button>
-          </article>
-
-          <article class="service" data-category="smm">
-            <h3 class="service__title">SMM и&nbsp;продвижение</h3>
-            <ul class="service__list">
-              <li>Стратегия и&nbsp;контент-план</li>
-              <li>Ведение соцсетей и&nbsp;Telegram-канала</li>
-              <li>Таргетированная реклама</li>
-              <li>Работа с&nbsp;блогерами</li>
-            </ul>
+          </div>
+        </li>
+        <li class="service" data-fade data-delay="0.2">
+          <span class="service__num" aria-hidden="true">03</span>
+          <div class="service__body">
+            <h3 class="service__name">SMM</h3>
+            <p class="service__desc">Ведение соцсетей и&nbsp;Telegram-каналов: стратегия, контент-план, тексты, сторис и&nbsp;отчёт по&nbsp;охватам каждый месяц.</p>
+            <p class="service__price">от&nbsp;25&nbsp;000&nbsp;₽ в&nbsp;месяц</p>
+          </div>
+        </li>
+        <li class="service" data-fade data-delay="0.3">
+          <span class="service__num" aria-hidden="true">04</span>
+          <div class="service__body">
+            <h3 class="service__name">Таргетированная реклама</h3>
+            <p class="service__desc">Реклама во&nbsp;ВКонтакте и&nbsp;Telegram Ads: настройка кампаний, тесты креативов и&nbsp;понятные отчёты.</p>
             <p class="service__price">от&nbsp;20&nbsp;000&nbsp;₽ в&nbsp;месяц</p>
-            <button class="link-btn" type="button" data-show-category="smm">Смотреть SMM-специалистов</button>
+          </div>
+        </li>
+        <li class="service" data-fade data-delay="0.4">
+          <span class="service__num" aria-hidden="true">05</span>
+          <div class="service__body">
+            <h3 class="service__name">Продвижение под ключ</h3>
+            <p class="service__desc">Соберём команду из&nbsp;видеографа, монтажёра и&nbsp;SMM-специалиста и&nbsp;будем вести ваш бренд целиком — от&nbsp;идеи до&nbsp;публикации.</p>
+            <p class="service__price">стоимость — после брифа</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ================= ПРОЕКТЫ =================
+         Фото проекта: project-1-1.jpg (левое верхнее), project-1-2.jpg (левое нижнее), project-1-3.jpg (правое высокое).
+         Для второго проекта — project-2-…, для третьего — project-3-….
+         Кнопка «Смотреть проект» появится, когда вместо href="#" будет настоящая ссылка. -->
+    <section class="projects dark-section" id="projects" aria-labelledby="projects-title">
+      <h2 class="section-heading hero-heading" id="projects-title" data-fade data-y="40">Проекты</h2>
+
+      <div class="stack" data-stack>
+        <div class="stack__item">
+          <article class="project-card" style="--i: 0">
+            <div class="project-card__top">
+              <span class="project-card__num" aria-hidden="true">01</span>
+              <div class="project-card__meta">
+                <p class="project-card__cat">Видеосъёмка</p>
+                <h3 class="project-card__name">Съёмка рилс для бизнеса</h3>
+              </div>
+              <a class="ghost-btn" href="#" target="_blank" rel="noopener" data-hide-if-empty>Смотреть проект</a>
+            </div>
+            <div class="project-card__grid">
+              <div class="project-card__col">
+                <div class="shot shot--a media-slot"><img class="media-slot__img" src="project-1-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+                <div class="shot shot--b media-slot"><img class="media-slot__img" src="project-1-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+              </div>
+              <div class="shot shot--c media-slot"><img class="media-slot__img" src="project-1-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="stack__item">
+          <article class="project-card" style="--i: 1">
+            <div class="project-card__top">
+              <span class="project-card__num" aria-hidden="true">02</span>
+              <div class="project-card__meta">
+                <p class="project-card__cat">Монтаж</p>
+                <h3 class="project-card__name">YouTube-выпуски под&nbsp;ключ</h3>
+              </div>
+              <a class="ghost-btn" href="#" target="_blank" rel="noopener" data-hide-if-empty>Смотреть проект</a>
+            </div>
+            <div class="project-card__grid">
+              <div class="project-card__col">
+                <div class="shot shot--a media-slot"><img class="media-slot__img" src="project-2-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+                <div class="shot shot--b media-slot"><img class="media-slot__img" src="project-2-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+              </div>
+              <div class="shot shot--c media-slot"><img class="media-slot__img" src="project-2-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="stack__item">
+          <article class="project-card" style="--i: 2">
+            <div class="project-card__top">
+              <span class="project-card__num" aria-hidden="true">03</span>
+              <div class="project-card__meta">
+                <p class="project-card__cat">SMM</p>
+                <h3 class="project-card__name">Ведение соцсетей бренда</h3>
+              </div>
+              <a class="ghost-btn" href="#" target="_blank" rel="noopener" data-hide-if-empty>Смотреть проект</a>
+            </div>
+            <div class="project-card__grid">
+              <div class="project-card__col">
+                <div class="shot shot--a media-slot"><img class="media-slot__img" src="project-3-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+                <div class="shot shot--b media-slot"><img class="media-slot__img" src="project-3-2.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+              </div>
+              <div class="shot shot--c media-slot"><img class="media-slot__img" src="project-3-3.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= КАТАЛОГ СПЕЦИАЛИСТОВ =================
+    <!-- ================= СПЕЦИАЛИСТЫ =================
          Один специалист — один блок <article class="pro">.
-         data-category: video (съёмка), edit (монтаж) или smm (SMM и продвижение).
-         data-name — имя, которое попадёт в форму заявки.
-         Ссылка «Портфолио» с href="#" на сайте не показывается — впишите настоящую ссылку. -->
-    <section class="section section--tinted" id="catalog" aria-labelledby="catalog-title">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" id="catalog-title">Специалисты</h2>
-          <p class="section__note">Все работают через агентство: договор, сроки и&nbsp;качество — на&nbsp;нас. Не&nbsp;знаете, кого выбрать? Оставьте заявку, подберём сами.</p>
-        </div>
+         data-category: video (съёмка), edit (монтаж) или smm.
+         data-name — имя, которое попадёт в заявку. Ссылка «Портфолио» с href="#" не показывается. -->
+    <section class="specialists light-section" id="specialists" aria-labelledby="specialists-title">
+      <h2 class="light-heading" id="specialists-title" data-fade data-y="40">Специалисты</h2>
+      <p class="specialists__note">Все работают через агентство: договор, сроки и&nbsp;качество — на&nbsp;нас. Не&nbsp;знаете, кого выбрать? Оставьте заявку, подберём сами.</p>
 
-        <div class="filters" role="group" aria-label="Показать специалистов">
-          <button class="filter" type="button" data-filter="all" aria-pressed="true">Все</button>
-          <button class="filter" type="button" data-filter="video" aria-pressed="false">Видеосъёмка</button>
-          <button class="filter" type="button" data-filter="edit" aria-pressed="false">Монтаж</button>
-          <button class="filter" type="button" data-filter="smm" aria-pressed="false">SMM и&nbsp;продвижение</button>
-        </div>
+      <div class="filters" role="group" aria-label="Показать специалистов">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">Все</button>
+        <button class="filter" type="button" data-filter="video" aria-pressed="false">Съёмка</button>
+        <button class="filter" type="button" data-filter="edit" aria-pressed="false">Монтаж</button>
+        <button class="filter" type="button" data-filter="smm" aria-pressed="false">SMM</button>
+      </div>
 
-        <div class="catalog" id="catalog-list">
-          <article class="pro" data-category="video" data-name="Антон К.">
-            <div class="pro__who">
-              <h3 class="pro__name">Антон К.</h3>
-              <p class="pro__role">Видеограф</p>
-            </div>
-            <p class="pro__about">Рилс и&nbsp;рекламные ролики для бизнеса. Снимает на&nbsp;Sony FX3, привозит свой свет и&nbsp;звук.</p>
-            <div class="pro__terms">
-              <p class="pro__price">от&nbsp;6&nbsp;000&nbsp;₽ за&nbsp;3&nbsp;часа</p>
-              <p class="pro__format">Выезд по&nbsp;городу</p>
-            </div>
-            <div class="pro__actions">
-              <a class="link-btn" href="#" target="_blank" rel="noopener" data-portfolio>Портфолио</a>
-              <button class="btn btn--small" type="button" data-choose>Выбрать</button>
-            </div>
-          </article>
-
-          <article class="pro" data-category="video" data-name="Вероника Л.">
-            <div class="pro__who">
-              <h3 class="pro__name">Вероника Л.</h3>
-              <p class="pro__role">Видеограф</p>
-            </div>
-            <p class="pro__about">Интервью, экспертные видео, мероприятия и&nbsp;backstage. Помогает с&nbsp;вопросами и&nbsp;подготовкой героя к&nbsp;съёмке.</p>
-            <div class="pro__terms">
-              <p class="pro__price">от&nbsp;8&nbsp;000&nbsp;₽ за&nbsp;4&nbsp;часа</p>
-              <p class="pro__format">Выезд, командировки</p>
-            </div>
-            <div class="pro__actions">
-              <a class="link-btn" href="#" target="_blank" rel="noopener" data-portfolio>Портфолио</a>
-              <button class="btn btn--small" type="button" data-choose>Выбрать</button>
-            </div>
-          </article>
-
-          <article class="pro" data-category="edit" data-name="Максим Р.">
-            <div class="pro__who">
-              <h3 class="pro__name">Максим Р.</h3>
-              <p class="pro__role">Монтажёр</p>
-            </div>
-            <p class="pro__about">Динамичный монтаж рилс и&nbsp;шортс: субтитры, звук, трекинг, переходы под&nbsp;музыку.</p>
-            <div class="pro__terms">
-              <p class="pro__price">от&nbsp;1&nbsp;500&nbsp;₽ за&nbsp;ролик</p>
-              <p class="pro__format">Удалённо</p>
-            </div>
-            <div class="pro__actions">
-              <a class="link-btn" href="#" target="_blank" rel="noopener" data-portfolio>Портфолио</a>
-              <button class="btn btn--small" type="button" data-choose>Выбрать</button>
-            </div>
-          </article>
-
-          <article class="pro" data-category="edit" data-name="Дарья С.">
-            <div class="pro__who">
-              <h3 class="pro__name">Дарья С.</h3>
-              <p class="pro__role">Монтажёр</p>
-            </div>
-            <p class="pro__about">YouTube-выпуски и&nbsp;подкасты, цветокоррекция, моушн-титры и&nbsp;обложки.</p>
-            <div class="pro__terms">
-              <p class="pro__price">от&nbsp;4&nbsp;000&nbsp;₽ за&nbsp;выпуск</p>
-              <p class="pro__format">Удалённо</p>
-            </div>
-            <div class="pro__actions">
-              <a class="link-btn" href="#" target="_blank" rel="noopener" data-portfolio>Портфолио</a>
-              <button class="btn btn--small" type="button" data-choose>Выбрать</button>
-            </div>
-          </article>
-
-          <article class="pro" data-category="smm" data-name="Екатерина М.">
-            <div class="pro__who">
-              <h3 class="pro__name">Екатерина М.</h3>
-              <p class="pro__role">SMM-специалист</p>
-            </div>
-            <p class="pro__about">Ведение ВКонтакте и&nbsp;Telegram-каналов: контент-план, тексты, сторис, отчёт по&nbsp;охватам раз в&nbsp;месяц.</p>
-            <div class="pro__terms">
-              <p class="pro__price">от&nbsp;25&nbsp;000&nbsp;₽ в&nbsp;месяц</p>
-              <p class="pro__format">Удалённо</p>
-            </div>
-            <div class="pro__actions">
-              <a class="link-btn" href="#" target="_blank" rel="noopener" data-portfolio>Портфолио</a>
-              <button class="btn btn--small" type="button" data-choose>Выбрать</button>
-            </div>
-          </article>
-
-          <article class="pro" data-category="smm" data-name="Олег Т.">
-            <div class="pro__who">
-              <h3 class="pro__name">Олег Т.</h3>
-              <p class="pro__role">Таргетолог</p>
-            </div>
-            <p class="pro__about">Реклама во&nbsp;ВКонтакте и&nbsp;Telegram Ads. Настройка, тесты креативов, еженедельные отчёты.</p>
-            <div class="pro__terms">
-              <p class="pro__price">от&nbsp;20&nbsp;000&nbsp;₽ в&nbsp;месяц</p>
-              <p class="pro__format">Удалённо</p>
-            </div>
-            <div class="pro__actions">
-              <a class="link-btn" href="#" target="_blank" rel="noopener" data-portfolio>Портфолио</a>
-              <button class="btn btn--small" type="button" data-choose>Выбрать</button>
-            </div>
-          </article>
-        </div>
+      <div class="catalog">
+        <article class="pro" data-category="video" data-name="Антон К.">
+          <div class="pro__who"><h3 class="pro__name">Антон К.</h3><p class="pro__role">Видеограф</p></div>
+          <p class="pro__about">Рилс и&nbsp;рекламные ролики для бизнеса. Снимает на&nbsp;Sony FX3, привозит свой свет и&nbsp;звук.</p>
+          <div class="pro__terms"><p class="pro__price">от&nbsp;6&nbsp;000&nbsp;₽ за&nbsp;3&nbsp;часа</p><p class="pro__format">Выезд по&nbsp;городу</p></div>
+          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+        </article>
+        <article class="pro" data-category="video" data-name="Вероника Л.">
+          <div class="pro__who"><h3 class="pro__name">Вероника Л.</h3><p class="pro__role">Видеограф</p></div>
+          <p class="pro__about">Интервью, экспертные видео, мероприятия и&nbsp;backstage. Помогает подготовить героя к&nbsp;съёмке.</p>
+          <div class="pro__terms"><p class="pro__price">от&nbsp;8&nbsp;000&nbsp;₽ за&nbsp;4&nbsp;часа</p><p class="pro__format">Выезд, командировки</p></div>
+          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+        </article>
+        <article class="pro" data-category="edit" data-name="Максим Р.">
+          <div class="pro__who"><h3 class="pro__name">Максим Р.</h3><p class="pro__role">Монтажёр</p></div>
+          <p class="pro__about">Динамичный монтаж рилс и&nbsp;шортс: субтитры, звук, трекинг, переходы под&nbsp;музыку.</p>
+          <div class="pro__terms"><p class="pro__price">от&nbsp;1&nbsp;500&nbsp;₽ за&nbsp;ролик</p><p class="pro__format">Удалённо</p></div>
+          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+        </article>
+        <article class="pro" data-category="edit" data-name="Дарья С.">
+          <div class="pro__who"><h3 class="pro__name">Дарья С.</h3><p class="pro__role">Монтажёр</p></div>
+          <p class="pro__about">YouTube-выпуски и&nbsp;подкасты, цветокоррекция, моушн-титры и&nbsp;обложки.</p>
+          <div class="pro__terms"><p class="pro__price">от&nbsp;4&nbsp;000&nbsp;₽ за&nbsp;выпуск</p><p class="pro__format">Удалённо</p></div>
+          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+        </article>
+        <article class="pro" data-category="smm" data-name="Екатерина М.">
+          <div class="pro__who"><h3 class="pro__name">Екатерина М.</h3><p class="pro__role">SMM-специалист</p></div>
+          <p class="pro__about">Ведение ВКонтакте и&nbsp;Telegram-каналов: контент-план, тексты, сторис, отчёт по&nbsp;охватам раз в&nbsp;месяц.</p>
+          <div class="pro__terms"><p class="pro__price">от&nbsp;25&nbsp;000&nbsp;₽ в&nbsp;месяц</p><p class="pro__format">Удалённо</p></div>
+          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+        </article>
+        <article class="pro" data-category="smm" data-name="Олег Т.">
+          <div class="pro__who"><h3 class="pro__name">Олег Т.</h3><p class="pro__role">Таргетолог</p></div>
+          <p class="pro__about">Реклама во&nbsp;ВКонтакте и&nbsp;Telegram Ads. Настройка, тесты креативов, еженедельные отчёты.</p>
+          <div class="pro__terms"><p class="pro__price">от&nbsp;20&nbsp;000&nbsp;₽ в&nbsp;месяц</p><p class="pro__format">Удалённо</p></div>
+          <div class="pro__actions"><a class="pro__link" href="#" target="_blank" rel="noopener" data-hide-if-empty>Портфолио</a><button class="pro__choose" type="button" data-choose>Выбрать</button></div>
+        </article>
       </div>
     </section>
 
-    <!-- ================= КАК РАБОТАЕМ ================= -->
-    <section class="section" id="process" aria-labelledby="process-title">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" id="process-title">Как работаем</h2>
+    <!-- ================= КОНТАКТЫ И ЗАЯВКИ ================= -->
+    <section class="contact dark-section" id="contacts" aria-labelledby="contacts-title">
+      <h2 class="section-heading hero-heading" id="contacts-title" data-fade data-y="40">Контакты</h2>
+
+      <div class="contact__grid">
+        <div class="contact__info">
+          <p class="contact__lead">Расскажите о&nbsp;задаче — менеджер ответит в&nbsp;течение рабочего дня и&nbsp;предложит специалистов.</p>
+          <p class="contact__lead">Вы видеограф, монтажёр или SMM&#8209;специалист? Откройте вкладку «Я&nbsp;специалист», чтобы попасть в&nbsp;каталог.</p>
+          <dl class="contact__list">
+            <div><dt>Telegram</dt><dd><a href="https://t.me/primecut_agency" target="_blank" rel="noopener">@primecut_agency</a></dd></div>
+            <div><dt>Почта</dt><dd><a href="mailto:hello@primecut.ru">hello@primecut.ru</a></dd></div>
+            <div><dt>Телефон</dt><dd><a href="tel:+79001234567">+7 (900) 123-45-67</a></dd></div>
+            <div><dt>Отвечаем</dt><dd>Пн–пт, 10:00–19:00</dd></div>
+          </dl>
         </div>
 
-        <ol class="steps">
-          <li class="step">
-            <h3 class="step__title">Заявка</h3>
-            <p>Опишите задачу в&nbsp;форме или в&nbsp;Telegram: что снять, смонтировать или продвинуть и&nbsp;к&nbsp;какому сроку.</p>
-          </li>
-          <li class="step">
-            <h3 class="step__title">Подбор</h3>
-            <p>Предложим одного-трёх специалистов с&nbsp;портфолио и&nbsp;ценой. Если задача большая — соберём команду.</p>
-          </li>
-          <li class="step">
-            <h3 class="step__title">Договор</h3>
-            <p>Фиксируем задачу, сроки и&nbsp;стоимость. Работаем официально, с&nbsp;закрывающими документами.</p>
-          </li>
-          <li class="step">
-            <h3 class="step__title">Работа и&nbsp;сдача</h3>
-            <p>Менеджер агентства ведёт проект, собирает правки и&nbsp;отвечает за&nbsp;сроки до&nbsp;финальной сдачи.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ================= ЗАЯВКА ================= -->
-    <section class="section section--tinted" id="request" aria-labelledby="request-title">
-      <div class="container split">
-        <div class="split__intro">
-          <h2 class="section__title" id="request-title">Заявка</h2>
-          <p>Расскажите о&nbsp;задаче. Менеджер ответит в&nbsp;течение рабочего дня и&nbsp;предложит специалистов.</p>
-          <p>Быстрее написать в&nbsp;Telegram? <a href="https://t.me/primecut_agency" target="_blank" rel="noopener">@primecut_agency</a></p>
-        </div>
-
-        <form class="form" id="request-form" data-form
-              data-title="Заявка с сайта PRIMECUT"
-              data-success-title="Заявка отправлена"
-              data-success-text="Менеджер свяжется с вами в течение рабочего дня и предложит специалистов."
-              novalidate>
-          <noscript><p class="form__noscript">Чтобы отправить заявку, включите JavaScript или напишите нам в&nbsp;Telegram.</p></noscript>
-
-          <div class="field">
-            <label for="r-category">Что нужно</label>
-            <select id="r-category" name="category" data-label="Услуга" required>
-              <option value="">Выберите услугу</option>
-              <option value="video">Видеосъёмка</option>
-              <option value="edit">Монтаж</option>
-              <option value="smm">SMM и продвижение</option>
-              <option value="mixed">Несколько услуг сразу</option>
-            </select>
-            <p class="field__error" id="r-category-error" hidden>Выберите, что нужно сделать</p>
+        <div class="contact__forms">
+          <div class="tabs" role="tablist" aria-label="Кто вы">
+            <button class="tab" type="button" role="tab" id="tab-request" aria-controls="request-form" aria-selected="true">Нужна услуга</button>
+            <button class="tab" type="button" role="tab" id="tab-join" aria-controls="join-form" aria-selected="false" tabindex="-1">Я специалист</button>
           </div>
 
-          <div class="field">
-            <label for="r-specialist">Специалист</label>
-            <select id="r-specialist" name="specialist" data-label="Специалист">
-              <option value="Подобрать">Подберите мне специалиста</option>
-              <!-- Варианты подставляются автоматически из каталога -->
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="r-task">Задача</label>
-            <textarea id="r-task" name="task" rows="4" maxlength="1500" data-label="Задача" required placeholder="Например: 4 рилс в месяц для кофейни — съёмка и монтаж"></textarea>
-            <p class="field__error" id="r-task-error" hidden>Опишите задачу хотя бы в&nbsp;двух словах</p>
-          </div>
-
-          <div class="field-row">
+          <form class="form" id="request-form" role="tabpanel" aria-labelledby="tab-request" data-form
+                data-title="Заявка с сайта PRIMECUT"
+                data-success-title="Заявка отправлена"
+                data-success-text="Менеджер свяжется с вами в течение рабочего дня и предложит специалистов."
+                novalidate>
+            <noscript><p class="form__noscript">Чтобы отправить заявку, включите JavaScript или напишите нам в&nbsp;Telegram.</p></noscript>
             <div class="field">
-              <label for="r-budget">Бюджет</label>
-              <select id="r-budget" name="budget" data-label="Бюджет">
-                <option>Пока не знаю</option>
-                <option>До 30 000 ₽</option>
-                <option>30 000–100 000 ₽</option>
-                <option>Больше 100 000 ₽</option>
+              <label for="r-category">Что нужно</label>
+              <select id="r-category" name="category" data-label="Услуга" required>
+                <option value="">Выберите услугу</option>
+                <option value="video">Видеосъёмка</option>
+                <option value="edit">Монтаж</option>
+                <option value="smm">SMM и таргет</option>
+                <option value="mixed">Продвижение под ключ</option>
+              </select>
+              <p class="field__error" id="r-category-error" hidden>Выберите, что нужно сделать</p>
+            </div>
+            <div class="field">
+              <label for="r-specialist">Специалист</label>
+              <select id="r-specialist" name="specialist" data-label="Специалист">
+                <option value="Подобрать">Подберите мне специалиста</option>
               </select>
             </div>
             <div class="field">
-              <label for="r-deadline">Сроки</label>
-              <select id="r-deadline" name="deadline" data-label="Сроки">
-                <option>Не горит</option>
-                <option>В течение месяца</option>
-                <option>В течение недели</option>
-                <option>Срочно, за 1–2 дня</option>
-              </select>
+              <label for="r-task">Задача</label>
+              <textarea id="r-task" name="task" rows="4" maxlength="1500" data-label="Задача" required placeholder="Например: 4 рилс в месяц для кофейни — съёмка и монтаж"></textarea>
+              <p class="field__error" id="r-task-error" hidden>Опишите задачу хотя бы в&nbsp;двух словах</p>
             </div>
-          </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="r-budget">Бюджет</label>
+                <select id="r-budget" name="budget" data-label="Бюджет">
+                  <option>Пока не знаю</option>
+                  <option>До 30 000 ₽</option>
+                  <option>30 000–100 000 ₽</option>
+                  <option>Больше 100 000 ₽</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="r-deadline">Сроки</label>
+                <select id="r-deadline" name="deadline" data-label="Сроки">
+                  <option>Не горит</option>
+                  <option>В течение месяца</option>
+                  <option>В течение недели</option>
+                  <option>Срочно, за 1–2 дня</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="r-name">Имя</label>
+              <input id="r-name" name="name" type="text" autocomplete="name" maxlength="80" data-label="Имя" required>
+              <p class="field__error" id="r-name-error" hidden>Напишите, как к&nbsp;вам обращаться</p>
+            </div>
+            <div class="field">
+              <label for="r-contact">Как с&nbsp;вами связаться</label>
+              <input id="r-contact" name="contact" type="text" maxlength="120" data-label="Контакт" required placeholder="Telegram, телефон или email">
+              <p class="field__error" id="r-contact-error" hidden>Оставьте Telegram, телефон или email</p>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="r-website">Не заполняйте это поле</label>
+              <input id="r-website" name="website" type="text" tabindex="-1" autocomplete="off" data-honeypot>
+            </div>
+            <div class="field field--check">
+              <input id="r-consent" name="consent" type="checkbox" required>
+              <label for="r-consent">Согласен на&nbsp;обработку персональных данных по&nbsp;<a href="privacy.html" target="_blank" rel="noopener">политике конфиденциальности</a></label>
+              <p class="field__error" id="r-consent-error" hidden>Без согласия мы не&nbsp;можем принять заявку</p>
+            </div>
+            <button class="contact-btn contact-btn--block" type="submit">Отправить заявку</button>
+            <div class="form__status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+          </form>
 
-          <div class="field">
-            <label for="r-name">Имя</label>
-            <input id="r-name" name="name" type="text" autocomplete="name" maxlength="80" data-label="Имя" required>
-            <p class="field__error" id="r-name-error" hidden>Напишите, как к&nbsp;вам обращаться</p>
-          </div>
-
-          <div class="field">
-            <label for="r-contact">Как с&nbsp;вами связаться</label>
-            <input id="r-contact" name="contact" type="text" maxlength="120" data-label="Контакт" required placeholder="Telegram, телефон или email">
-            <p class="field__error" id="r-contact-error" hidden>Оставьте Telegram, телефон или email</p>
-          </div>
-
-          <div class="hp" aria-hidden="true">
-            <label for="r-website">Не заполняйте это поле</label>
-            <input id="r-website" name="website" type="text" tabindex="-1" autocomplete="off" data-honeypot>
-          </div>
-
-          <div class="field field--check">
-            <input id="r-consent" name="consent" type="checkbox" required>
-            <label for="r-consent">Согласен на&nbsp;обработку персональных данных по&nbsp;<a href="privacy.html" target="_blank" rel="noopener">политике конфиденциальности</a></label>
-            <p class="field__error" id="r-consent-error" hidden>Без согласия мы не&nbsp;можем принять заявку</p>
-          </div>
-
-          <button class="btn btn--primary btn--large btn--block" type="submit">Отправить заявку</button>
-          <div class="form__status" role="status" aria-live="polite" tabindex="-1" hidden></div>
-        </form>
-      </div>
-    </section>
-
-    <!-- ================= ДЛЯ СПЕЦИАЛИСТОВ ================= -->
-    <section class="section section--dark" id="join" aria-labelledby="join-title">
-      <div class="container split">
-        <div class="split__intro">
-          <h2 class="section__title" id="join-title">Вы видеограф, монтажёр или SMM&#8209;специалист?</h2>
-          <p>Разместите свои услуги в&nbsp;каталоге PRIMECUT. Мы находим заказчиков, заключаем договор и&nbsp;следим за&nbsp;оплатой — вы занимаетесь работой.</p>
-          <p>Смотрим портфолио каждого, кто оставил анкету, и&nbsp;отвечаем в&nbsp;течение трёх рабочих дней.</p>
+          <form class="form" id="join-form" role="tabpanel" aria-labelledby="tab-join" data-form
+                data-title="Анкета специалиста PRIMECUT"
+                data-success-title="Анкета отправлена"
+                data-success-text="Посмотрим портфолио и напишем вам в течение трёх рабочих дней."
+                novalidate hidden>
+            <div class="field">
+              <label for="j-name">Имя и&nbsp;фамилия</label>
+              <input id="j-name" name="name" type="text" autocomplete="name" maxlength="80" data-label="Имя" required>
+              <p class="field__error" id="j-name-error" hidden>Напишите имя и&nbsp;фамилию</p>
+            </div>
+            <div class="field">
+              <label for="j-role">Специализация</label>
+              <select id="j-role" name="role" data-label="Специализация" required>
+                <option value="">Выберите специализацию</option>
+                <option>Видеограф</option>
+                <option>Монтажёр</option>
+                <option>SMM-специалист</option>
+                <option>Таргетолог</option>
+                <option>Другое</option>
+              </select>
+              <p class="field__error" id="j-role-error" hidden>Выберите специализацию</p>
+            </div>
+            <div class="field">
+              <label for="j-portfolio">Ссылка на&nbsp;портфолио</label>
+              <input id="j-portfolio" name="portfolio" type="text" inputmode="url" maxlength="300" data-label="Портфолио" required placeholder="Сайт, Telegram-канал, облако с работами">
+              <p class="field__error" id="j-portfolio-error" hidden>Добавьте ссылку на&nbsp;работы</p>
+            </div>
+            <div class="field">
+              <label for="j-contact">Как с&nbsp;вами связаться</label>
+              <input id="j-contact" name="contact" type="text" maxlength="120" data-label="Контакт" required placeholder="Telegram, телефон или email">
+              <p class="field__error" id="j-contact-error" hidden>Оставьте Telegram, телефон или email</p>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="j-website">Не заполняйте это поле</label>
+              <input id="j-website" name="website" type="text" tabindex="-1" autocomplete="off" data-honeypot>
+            </div>
+            <div class="field field--check">
+              <input id="j-consent" name="consent" type="checkbox" required>
+              <label for="j-consent">Согласен на&nbsp;обработку персональных данных по&nbsp;<a href="privacy.html" target="_blank" rel="noopener">политике конфиденциальности</a></label>
+              <p class="field__error" id="j-consent-error" hidden>Без согласия мы не&nbsp;можем принять анкету</p>
+            </div>
+            <button class="contact-btn contact-btn--block" type="submit">Отправить анкету</button>
+            <div class="form__status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+          </form>
         </div>
-
-        <form class="form" id="join-form" data-form
-              data-title="Анкета специалиста PRIMECUT"
-              data-success-title="Анкета отправлена"
-              data-success-text="Посмотрим портфолио и напишем вам в течение трёх рабочих дней."
-              novalidate>
-          <div class="field">
-            <label for="j-name">Имя и&nbsp;фамилия</label>
-            <input id="j-name" name="name" type="text" autocomplete="name" maxlength="80" data-label="Имя" required>
-            <p class="field__error" id="j-name-error" hidden>Напишите имя и&nbsp;фамилию</p>
-          </div>
-
-          <div class="field">
-            <label for="j-role">Специализация</label>
-            <select id="j-role" name="role" data-label="Специализация" required>
-              <option value="">Выберите специализацию</option>
-              <option>Видеограф</option>
-              <option>Монтажёр</option>
-              <option>SMM-специалист</option>
-              <option>Таргетолог</option>
-              <option>Другое</option>
-            </select>
-            <p class="field__error" id="j-role-error" hidden>Выберите специализацию</p>
-          </div>
-
-          <div class="field">
-            <label for="j-portfolio">Ссылка на&nbsp;портфолио</label>
-            <input id="j-portfolio" name="portfolio" type="text" inputmode="url" maxlength="300" data-label="Портфолио" required placeholder="Сайт, Telegram-канал, облако с работами">
-            <p class="field__error" id="j-portfolio-error" hidden>Добавьте ссылку на&nbsp;работы</p>
-          </div>
-
-          <div class="field">
-            <label for="j-contact">Как с&nbsp;вами связаться</label>
-            <input id="j-contact" name="contact" type="text" maxlength="120" data-label="Контакт" required placeholder="Telegram, телефон или email">
-            <p class="field__error" id="j-contact-error" hidden>Оставьте Telegram, телефон или email</p>
-          </div>
-
-          <div class="hp" aria-hidden="true">
-            <label for="j-website">Не заполняйте это поле</label>
-            <input id="j-website" name="website" type="text" tabindex="-1" autocomplete="off" data-honeypot>
-          </div>
-
-          <div class="field field--check">
-            <input id="j-consent" name="consent" type="checkbox" required>
-            <label for="j-consent">Согласен на&nbsp;обработку персональных данных по&nbsp;<a href="privacy.html" target="_blank" rel="noopener">политике конфиденциальности</a></label>
-            <p class="field__error" id="j-consent-error" hidden>Без согласия мы не&nbsp;можем принять анкету</p>
-          </div>
-
-          <button class="btn btn--primary btn--large btn--block" type="submit">Отправить анкету</button>
-          <div class="form__status" role="status" aria-live="polite" tabindex="-1" hidden></div>
-        </form>
       </div>
     </section>
   </main>
 
-  <!-- ================= ПОДВАЛ И КОНТАКТЫ ================= -->
-  <footer class="site-footer" id="contacts">
-    <div class="container">
-      <h2 class="site-footer__title">Контакты</h2>
-      <dl class="contacts">
-        <div>
-          <dt>Telegram</dt>
-          <dd><a href="https://t.me/primecut_agency" target="_blank" rel="noopener">@primecut_agency</a></dd>
-        </div>
-        <div>
-          <dt>Почта</dt>
-          <dd><a href="mailto:hello@primecut.ru">hello@primecut.ru</a></dd>
-        </div>
-        <div>
-          <dt>Телефон</dt>
-          <dd><a href="tel:+79001234567">+7 (900) 123-45-67</a></dd>
-        </div>
-        <div>
-          <dt>Отвечаем</dt>
-          <dd>Пн–пт, 10:00–19:00</dd>
-        </div>
-      </dl>
-
-      <div class="site-footer__row">
-        <p>© <span data-year>2026</span> PRIMECUT. Агентство продвижения.</p>
-        <ul class="site-footer__links">
-          <li><a href="privacy.html">Политика конфиденциальности</a></li>
-          <li><a href="#join">Стать специалистом</a></li>
-        </ul>
-      </div>
-    </div>
+  <footer class="footer">
+    <p>© <span data-year>2026</span> PRIMECUT. Агентство продвижения.</p>
+    <ul class="footer__links">
+      <li><a href="privacy.html">Политика конфиденциальности</a></li>
+      <li><a href="#contacts" data-open-tab="tab-join">Стать специалистом</a></li>
+    </ul>
   </footer>
 </body>
 </html>

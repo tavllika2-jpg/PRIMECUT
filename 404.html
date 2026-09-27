@@ -7,28 +7,28 @@
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Стили встроены прямо сюда, чтобы страница выглядела правильно по любому адресу -->
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@900&family=Rubik:wght@300;500&display=swap" rel="stylesheet">
+  <!-- Стили встроены сюда, чтобы страница выглядела правильно по любому адресу -->
   <style>
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #EEF0F3; color: #1E2230;
-           font-family: "Geologica", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; padding: 2rem; }
-    .clip { display: inline-block; padding: .5rem .2em .05em; background: #5B4BD0; color: #fff; border-radius: 6px;
-            font-size: clamp(6rem, 30vw, 14rem); font-weight: 800; line-height: .95; letter-spacing: -.05em; }
-    .clip small { display: block; font-size: .75rem; font-weight: 500; letter-spacing: 0; opacity: .8; }
-    p { margin: 1.5rem 0 2rem; font-size: 1.375rem; max-width: 30ch; }
-    a { display: inline-block; padding: .9rem 1.75rem; border-radius: 6px; background: #1E2230; color: #fff;
-        font-weight: 600; text-decoration: none; }
-    a:hover { background: #5B4BD0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #0C0C0C; color: #D7E2EA;
+           font-family: "Rubik", system-ui, sans-serif; text-align: center; }
+    h1 { font-family: "Kanit", "Rubik", sans-serif; font-weight: 900; font-size: clamp(7rem, 32vw, 20rem); line-height: 1;
+         background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%); -webkit-background-clip: text; background-clip: text;
+         -webkit-text-fill-color: transparent; color: transparent; }
+    p { margin: 16px auto 36px; max-width: 28ch; font-weight: 300; font-size: 1.25rem; }
+    a { display: inline-block; padding: 16px 48px; border-radius: 999px; color: #fff; text-decoration: none; text-transform: uppercase;
+        letter-spacing: .1em; font-weight: 500; outline: 2px solid #fff; outline-offset: -3px;
+        background: linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%);
+        box-shadow: 0 4px 4px rgba(181, 1, 167, .25), inset 4px 4px 12px #7721B1; }
   </style>
 </head>
 <body>
   <main>
-    <div class="clip" aria-hidden="true"><small>missing_clip.mp4</small>404</div>
-    <h1 style="position:absolute;left:-9999px">Страница не найдена</h1>
+    <h1>404</h1>
     <p>Такой страницы нет. Возможно, ссылка устарела.</p>
     <a href="/" id="home">На главную</a>
     <script>
-      // На адресах вида имя.github.io/репозиторий/ ведём на главную репозитория
       if (location.hostname.endsWith("github.io")) {
         var seg = location.pathname.split("/")[1];
         if (seg) document.getElementById("home").href = "/" + seg + "/";
